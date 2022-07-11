@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%--
   Created by IntelliJ IDEA.
   User: dsike
@@ -23,7 +23,7 @@
 %>
 <html>
 <head>
-  <title>Title</title>
+  <title>Evolve</title>
   <%@include file="includes/header.jsp" %>  <!--BoostStrap CSS CDN -->
 </head>
 <body>
@@ -34,48 +34,44 @@
         <form action="insert-user" method="post">
           <caption>
             <h2>
-              <c:if test="${user == null}">
                 Add New User
-              </c:if>
             </h2>
           </caption>
-
-          <c:if test="${user != null}">
-            <input type="hidden" name="id" value="<c:out value='${user.id}' />" />
-          </c:if>
+            <input type="hidden" name="id" />
 
           <fieldset class="form-group">
             <label>User Name</label> <input type="text"
-                                            value="<c:out value='${user.name}' />" class="form-control"
+                                            class="form-control"
                                             name="name" required="required">
           </fieldset>
 
           <fieldset class="form-group">
             <label>User Email</label> <input type="email"
-                                             value="<c:out value='${user.email}' />" class="form-control"
+                                             class="form-control"
                                              name="email" required="required">
           </fieldset>
 
           <fieldset class="form-group">
             <label>Password</label> <input type="text" minlength="5"
-                                           value="<c:out value='${user.password}' />" class="form-control"
+                                           class="form-control"
                                            name="password" required="required">
           </fieldset>
 
-<%--          <fieldset class="form-group">--%>
-<%--            <label>User Type</label>--%>
-<%--            <br>--%>
-<%--            <select class="form-group" aria-label="Default select example" name="usertype" required="required">--%>
-<%--              <option value='${null}'>Select User Type</option>--%>
-<%--              <option value="Admin">Admin</option>--%>
-<%--              <option value="Client">Client</option>--%>
-<%--            </select>--%>
-<%--          </fieldset>--%>
+          <fieldset class="form-group">
+            <label>User Type</label>
+            <br>
+            <select class="form-group" aria-label="Default select example" name="usertype" required="required">
+              <option value='${null}'>Select User Type</option>
+              <option value="Admin">Admin</option>
+              <option value="Client">Client</option>
+            </select>
+          </fieldset>
 
           <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>
   </div>
 </div>
+<%@include file="includes/BootScript.jsp" %>
 </body>
 </html>

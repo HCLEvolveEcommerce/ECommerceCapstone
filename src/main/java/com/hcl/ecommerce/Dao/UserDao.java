@@ -17,11 +17,11 @@ public class UserDao {
     private PreparedStatement pst;
     private ResultSet rs;
 
-    private static final String INSERT_USERS_SQL = "INSERT INTO users" + " (name, email, password) VALUES " + " (?, ?, ?);";
+    private static final String INSERT_USERS_SQL = "INSERT INTO users" + " (name, email, password, usertype) VALUES " + " (?, ?, ?, ?);";
     private static final String SELECT_USER_BY_ID = "select id, name,email,usertype, password from users where id=?";
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id=?";
-    private static final String UPDATE_USERS_SQL = "update users set name = ?, email=?, usertype=?, password=? where id=?";
+    private static final String UPDATE_USERS_SQL = "update users set name = ?, email=?, password=? , usertype=? where id=?";
     private static final String QUERY_CHECK = "select * from users WHERE email = ?";
     private static final String LOGIN_CHECK = "select * from users WHERE email = ? AND password =? ";
     private static final String TYPE_CHECK = "select*from users WHERE usertype =?";
@@ -45,6 +45,7 @@ public class UserDao {
                 user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
                 user.setEmail(rs.getString("email"));
+                user.setUsertype(rs.getString("usertype"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,6 +68,7 @@ public class UserDao {
                 row.setName(rs.getString("name"));
                 row.setEmail(rs.getString("email"));
                 row.setPassword(rs.getString("password"));
+                row.setUsertype(rs.getString("usertype"));
 
                 book.add(row);
             }
@@ -86,27 +88,52 @@ public class UserDao {
             preparedStatement.setString(1, user.getEmail());
             System.out.println(preparedStatement);
             final ResultSet resultSet = preparedStatement.executeQuery();
-            System.out.println("ive gotten to execute");
             if (resultSet.next()) {
-                System.out.println("im in the if statement");
                 final int count = resultSet.getInt(1);
                 preparedStatement.executeUpdate();
                 System.out.println(preparedStatement);
             }
         }
-        System.out.println("im passed if ");
 
         try(PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-            System.out.println("im within try #2 ");
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setString(4, user.getUsertype());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
-            System.out.println("before the catch");
 
         } catch (SQLException ignored) {
         }
+    }
+
+    public boolean deleteUser(int id) throws SQLException, ClassNotFoundException {
+        boolean rowDeleted;
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(DELETE_USERS_SQL);){
+            statement.setInt(1, id);
+            rowDeleted = statement.executeUpdate() > 0;
+        }
+        return rowDeleted;
+    }
+
+    public boolean updateUser(User user) throws SQLException{
+        boolean rowUpdated;
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);){
+            System.out.println("updated User: " + statement);
+            statement.setString(1, user.getName());
+            statement.setString(2, user.getEmail());
+            statement.setString(3, user.getPassword());
+            statement.setString(4, user.getUsertype());
+            statement.setInt(5, user.getId());
+
+
+            rowUpdated = statement.executeUpdate() > 0;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return rowUpdated;
     }
 
     private void printSQLException(SQLException ex) {

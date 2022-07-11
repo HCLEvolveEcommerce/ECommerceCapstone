@@ -10,6 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Objects;
 
 @WebServlet("/user-login")
 public class LoginServlet extends HttpServlet {
@@ -17,6 +18,7 @@ public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession(true);
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String email = request.getParameter("login-email");
@@ -26,8 +28,26 @@ public class LoginServlet extends HttpServlet {
             User user = udao.userLogin(email, password);
             if (user != null) {
                 request.getSession().setAttribute("auth", user);
-//				System.out.print("user logged in");
-                response.sendRedirect("index.jsp");
+                if(Objects.equals(user.getUsertype(), "Admin")) {
+                    session.setAttribute("id", user.getId());
+                    session.setAttribute("name", user.getName());
+                    session.setAttribute("email", user.getEmail());
+                    session.setAttribute("usertype", user.getUsertype());
+
+                    response.sendRedirect("adminlist.jsp");
+                    System.out.println("Logged in as Admin");
+                    System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
+                }
+
+                else {
+                    session.setAttribute("id", user.getId());
+                    session.setAttribute("name", user.getName());
+                    session.setAttribute("email", user.getEmail());
+                    session.setAttribute("usertype", user.getUsertype());
+                    response.sendRedirect("index.jsp");
+                    System.out.println("Logged in as User");
+                    System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
+                }
             } else {
                 out.print("Invalid Username or Password");
 

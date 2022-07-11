@@ -10,26 +10,36 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "InsertUser", value = "/insert-user")
-public class InsertUser extends HttpServlet {
+@WebServlet(name = "EditUserServlet", value = "/update-user" +
+        "")
+public class UpdateUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Am I touched");
+        int id = Integer.parseInt(request.getParameter("id"));
+        System.out.println("post parse");
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String usertype = request.getParameter("usertype");
         UserDao udao = null;
-        User user = new User(name, email, password);
+        User user = new User(id, name, email, password, usertype);
+        System.out.println("before try");
         try {
             udao = new UserDao(DbCon.getConnection());
-            udao.insertUser(user);
+            udao.updateUser(user);
+            System.out.println("after try");
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
+        System.out.println("after catch");
         response.sendRedirect("adminlist.jsp");
     }
 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+
     }
 }
+

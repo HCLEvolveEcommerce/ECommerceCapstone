@@ -15,53 +15,11 @@
 %>
 <html>
 <head>
-    <title>Welcome to ECommerce</title>
+    <title>Evolve</title>
     <%@include file="includes/header.jsp"%>  <!--BoostStrap CSS CDN -->
 </head>
 <body class="gradient-custom">
 <%@include file="includes/navbar.jsp"%>
-<%--<style>--%>
-<%--    .gradient-custom {--%>
-<%--        /* fallback for old browsers  */--%>
-<%--        background: #6a11cb;--%>
-
-<%--        /* Chrome 10-25, Safari 5.1-6 */--%>
-<%--        background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));--%>
-
-<%--        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */--%>
-<%--        background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))--%>
-<%--    }--%>
-
-<%--</style>--%>
-
-<%--<!-- Product Cards -->--%>
-<%--<div class="container">--%>
-<%--    <div class="card-header my-3"> All Products</div>--%>
-<%--    <div class="row">--%>
-
-<%--        <%if (!products.isEmpty()){--%>
-<%--                for(Product p:products){%>--%>
-<%--                    <div class="col-md-3 my-5">--%>
-<%--            <div class="card w-100" style="width: 18rem;">--%>
-<%--                <img class="card-img-top" src="product-image/<%= p.getImage()%>" alt="Card image cap">--%>
-<%--                <div class="card-body">--%>
-<%--                    <h5 class="card-title"><%= p.getName()%></h5>--%>
-<%--                    <h6 class="price">$<%=p.getPrice()%></h6>--%>
-<%--                    <h6 class="price"><%=p.getCategory()%></h6>--%>
-<%--                    <div class="mt-3 d-flex justify-content-between">--%>
-<%--                        <a href="#" class="btn btn-primary">Add To Cart</a>--%>
-<%--                        <a href="#" class="btn btn-primary">Buy Now</a>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--                    </div>--%>
-<%--                <%}--%>
-<%--            }--%>
-<%--        %>--%>
-
-<%--        </div>--%>
-<%--    </div>--%>
-
 
 <section style=" background-color: #20bf55; background-image:linear-gradient(315deg, #20bf55 0%, #01baef 74%);">
     <div class="text-center container py-5">
@@ -103,6 +61,6 @@
             }
         %>
 
-<%@include file="includes/footer.jsp"%> <!--BoostStrap JS CDN -->
+<%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
 </body>
 </html>

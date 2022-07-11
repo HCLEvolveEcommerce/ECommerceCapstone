@@ -37,7 +37,7 @@
                         <div class="mb-md-5 mt-md-4 pb-5">
 
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                            <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                            <p class="text-white-50 mb-5">Please enter your login and password!</p> <!-- success account created please login -->
 
                             <div class="form-outline form-white mb-4">
                                 <input type="email"
@@ -57,7 +57,7 @@
                         </div>
 
                         <div>
-                            <p class="mb-0">Don't have an account? <a href="" class="text-white-50 fw-bold">Sign Up</a>
+                            <p class="mb-0">Don't have an account? <a href="signup.jsp" class="text-white-50 fw-bold">Sign Up</a>
                             </p>
                         </div>
 
@@ -70,6 +70,6 @@
 
 
 
-<%@include file="includes/footer.jsp"%> <!--BoostStrap JS CDN -->
+<%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
 </body>
 </html>

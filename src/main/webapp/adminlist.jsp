@@ -22,7 +22,7 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Evolve</title>
     <%@include file="includes/header.jsp" %>  <!--BoostStrap CSS CDN -->
 </head>
 <body>
@@ -34,7 +34,7 @@
         <hr>
         <div class="container text-left">
 
-            <a href="adminform.jsp" class="btn btn-success">Add
+            <a href="insertform.jsp" class="btn btn-success">Add
                 New User</a>
         </div>
         <br>
@@ -45,6 +45,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>User Type</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -56,16 +57,17 @@
                 <td><%=u.getName()%></td>
                 <td><%=u.getEmail()%></td>
                 <td><%=u.getPassword()%></td>
-                <td><a href="edit?id=">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=">Delete</a></td>
+                <td><%=u.getUsertype()%></td>
+                <td><a href="UpdateUserForm.jsp?id=<%=u.getId()%>">Edit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete-user?id=<%=u.getId()%>">Delete</a></td>
             </tr>
             </tbody>
             <%}
-            }
-            %>
+            }%>
 
         </table>
 
     </div>
+    <%@include file="includes/BootScript.jsp" %>
 </body>
 </html>

@@ -16,6 +16,6 @@
 
 
 
-<%@include file="includes/footer.jsp"%> <!--BoostStrap JS CDN -->
+<%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
 </body>
 </html>
