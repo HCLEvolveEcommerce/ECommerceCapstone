@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dsike
@@ -58,7 +59,7 @@
                 <td><%=u.getEmail()%></td>
                 <td><%=u.getPassword()%></td>
                 <td><%=u.getUsertype()%></td>
-                <td><a href="UpdateUserForm.jsp?id=<%=u.getId()%>">Edit</a>
+                <td><a href="edit-form?id=<%=u.getId()%>">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete-user?id=<%=u.getId()%>">Delete</a></td>
             </tr>
             </tbody>

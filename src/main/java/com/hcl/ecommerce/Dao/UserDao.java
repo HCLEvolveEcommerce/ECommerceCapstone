@@ -80,6 +80,27 @@ public class UserDao {
         return book;
     }
 
+    public User selectUser(int id){
+        User user = null;
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);) {
+            preparedStatement.setInt(1, id);
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                String usertype = rs.getString("usertype");
+                user = new User(id, name, email, password, usertype);
+            }
+        } catch (SQLException | ClassNotFoundException e){
+            assert e instanceof SQLException;
+            printSQLException((SQLException) e);
+        }
+        return user;
+    }
+
     public void insertUser(User user) throws SQLException, ClassNotFoundException { //untested
         System.out.println(INSERT_USERS_SQL);
         try(Connection connection = getConnection(); // Implemented Duplicate Value Check
