@@ -1,4 +1,4 @@
-#Completely Redone!!
+# Completely Redone!!
 
 - This is a Completely New Repo of the Eccomerece Web App
 - Directory is more structured
