@@ -11,13 +11,15 @@
 - Created # databases (Order, Product, User)
 - Created Cleaner Logout function 
 
+# Little Kinks 
+- Design invalid login better
+- Add Shopping Cart (cart visual dropdown upper right hand corner) {redirect to cart.jsp}
+
 # Currently Working On:
-- Edit Function
+- Implement CRUD operations for Products
 - Implement Cart Add, Update, Delete
 - Admin and Client differentiation 
 
-
 # Priorities After Current Is done 
 - Implement Order, Order Total 
-- Implement CRUD operations for Products
 - Email Order infromation w/ total
