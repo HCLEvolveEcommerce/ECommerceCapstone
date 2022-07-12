@@ -1,23 +1,26 @@
-# Completely Redone!!
+# List Of Implementations
+- Complete Product and User CRUD
+- Add Cart
+- Session handling 
+- User Logout, Login
+- User Signup 
+- Displayable DB Values for Users and Products 
+- Clean Project Structure
+- BootStrap 
 
-- This is a Completely New Repo of the Eccomerece Web App
-- Directory is more structured
-- Servlets have a clear purpose 
-- Less Boiler Plate code in JSP files 
-- Less Boiler Plate in java files 
-- Product Info (Picture, Name, Price, Category) have been implemented 
-- Admin List and Insert User has been implemented
-- Follows MVC Design Pattern 
-- Created # databases (Order, Product, User)
-- Created Cleaner Logout function 
+# Little Kinks 
+- Design invalid login better
+- Add Shopping Cart (cart visual dropdown upper right hand corner) {redirect to cart.jsp}
+- NavBar Search on Home Page w/ Categories 
+- Redesign Homepage Bootstrap "Make it prettier"
+- "Too many Login Attempts" 
 
 # Currently Working On:
-- Edit Function
-- Implement Cart Add, Update, Delete
+- Implement Update, Delete
+- Implement Order Submittal, Order Page
 - Admin and Client differentiation 
 
-
 # Priorities After Current Is done 
-- Implement Order, Order Total 
-- Implement CRUD operations for Products
 - Email Order infromation w/ total
+- Test Cases using JUnit 5
+- List of Kinks ^^
