@@ -11,6 +11,8 @@
 <%@ page import="com.hcl.ecommerce.Dao.UserDao" %>
 <%@ page import="com.hcl.ecommerce.Model.DbCon" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.hcl.ecommerce.Dao.ProductDao" %>
+<%@ page import="com.hcl.ecommerce.Model.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     User auth = (User) request.getSession().getAttribute("auth");
@@ -20,6 +22,9 @@
 
     UserDao ud = new UserDao(DbCon.getConnection());
     List<User> users = ud.getAllUsers();
+
+    ProductDao pd = new ProductDao(DbCon.getConnection());
+    List<Product> products = pd.getAllProducts();
 %>
 <html>
 <head>
@@ -31,12 +36,11 @@
 <div class="row">
     <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
     <div class="container">
-        <h3 class="text-center">List of Users</h3>
+        <h3 class="text-center">List of Products</h3>
         <hr>
-        <div class="container text-left">
-
-            <a href="insertform.jsp" class="btn btn-success">Add
-                New User</a>
+        <div class="container text-center">
+            <a href="InsertProductForm.jsp" class="btn btn-success" >Add New Product</a>
+            <a href="UserList.jsp" class="btn btn-success" >User Table</a>
         </div>
         <br>
         <table class="table table-bordered" style="border-width: thick ">
@@ -44,23 +48,23 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>User Type</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Image Name</th>
                 <th>Actions</th>
             </tr>
             </thead>
-            <%if (!users.isEmpty()){
-                for(User u:users){%>
+            <%if (!products.isEmpty()){
+                for(Product p:products){%> <!-- should work -->
             <tbody>
             <tr>
-                <td><%=u.getId()%></td>
-                <td><%=u.getName()%></td>
-                <td><%=u.getEmail()%></td>
-                <td><%=u.getPassword()%></td>
-                <td><%=u.getUsertype()%></td>
-                <td><a href="edit-form?id=<%=u.getId()%>">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete-user?id=<%=u.getId()%>">Delete</a></td>
+                <td><%=p.getId()%></td>
+                <td><%=p.getName()%></td>
+                <td><%=p.getCategory()%></td>
+                <td>$<%=p.getPrice()%></td>
+                <td><%=p.getImage()%></td>
+                <td><a href="editP-form?id=<%=p.getId()%>">Edit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete-product?id=<%=p.getId()%>">Delete</a></td> <!--should work -->
             </tr>
             </tbody>
             <%}

@@ -25,7 +25,7 @@
             <%
                 if (auth != null) {
             %>
-            <li class="nav-item"><a class="nav-link" href="adminlist.jsp">User List </a></li>
+            <li class="nav-item"><a class="nav-link" href="UserList.jsp">User List </a></li>
             <li class="nav-item"><a class="nav-link" href="orders.jsp">Your Orders</a></li>
             <li class="nav-item"><a class="nav-link" href="log-out">Logout</a></li>
             <%

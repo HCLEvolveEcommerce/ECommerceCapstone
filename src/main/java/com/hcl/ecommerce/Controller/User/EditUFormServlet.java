@@ -1,4 +1,4 @@
-package com.hcl.ecommerce.Controller;
+package com.hcl.ecommerce.Controller.User;
 
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
@@ -10,28 +10,26 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "SignUpServlet", value = "/signup-user")
-public class SignUpServlet extends HttpServlet {
+@WebServlet(name = "ShowEditForm", value = "/editU-form")
+public class EditUFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String usertype = request.getParameter("usertype");
-        UserDao udao = null;
-        User user = new User(name, email, password, usertype);
+        UserDao userDao = null;
         try {
-            udao = new UserDao(DbCon.getConnection());
-            udao.insertUser(user);
+            userDao= new UserDao(DbCon.getConnection());
+            int id = Integer.parseInt(request.getParameter("id"));
+            User existingUser = userDao.selectUser(id);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("UpdateUserForm.jsp"); //created later
+            request.setAttribute("user", existingUser);
+            dispatcher.forward(request, response);
+
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
-        response.sendRedirect("login.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+
     }
 }
-

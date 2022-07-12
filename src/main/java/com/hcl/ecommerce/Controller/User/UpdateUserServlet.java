@@ -1,4 +1,4 @@
-package com.hcl.ecommerce.Controller;
+package com.hcl.ecommerce.Controller.User;
 
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "EditUserServlet", value = "/update-user" +
+@WebServlet(name = "UpdateUserServlet", value = "/update-user" +
         "")
 public class UpdateUserServlet extends HttpServlet {
     @Override
@@ -33,7 +33,7 @@ public class UpdateUserServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         System.out.println("after catch");
-        response.sendRedirect("adminlist.jsp");
+        response.sendRedirect("UserList.jsp");
     }
 
 

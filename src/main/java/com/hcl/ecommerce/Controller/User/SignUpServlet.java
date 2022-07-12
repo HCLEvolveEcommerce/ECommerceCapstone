@@ -1,4 +1,4 @@
-package com.hcl.ecommerce.Controller;
+package com.hcl.ecommerce.Controller.User;
 
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
@@ -10,8 +10,8 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "InsertUser", value = "/insert-user")
-public class InsertUserServlet extends HttpServlet {
+@WebServlet(name = "SignUpServlet", value = "/signup-user")
+public class SignUpServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
@@ -26,7 +26,7 @@ public class InsertUserServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
-        response.sendRedirect("adminlist.jsp");
+        response.sendRedirect("login.jsp");
     }
 
     @Override
@@ -34,3 +34,4 @@ public class InsertUserServlet extends HttpServlet {
         doGet(request, response);
     }
 }
+

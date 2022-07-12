@@ -23,7 +23,7 @@
 
 <section style=" background-color: #20bf55; background-image:linear-gradient(315deg, #20bf55 0%, #01baef 74%);">
     <div class="text-center container py-5">
-        <h4 class="mt-4 mb-5"><strong>Products</strong></h4>
+        <h4 class="mt-4 mb-5"><strong>Our Selection</strong></h4>
 
         <div class="row">
                 <%if (!products.isEmpty()){
@@ -51,8 +51,8 @@
                         </a>
                         <h6 class="mb-3">$<%=p.getPrice()%>
                         </h6>
-                        <button class="btn btn-primary btn-sm" type="button">Add To Cart</button>
-                        <button class="btn btn-primary btn-sm" type="button">Buy Now</button>
+                        <a href="add-cart?id=<%=p.getId()%>" class="btn btn-dark">Add To Cart</a>
+                        <a href="add-cart?id=<%=p.getId()%>" class="btn btn-secondary">Buy Now</a>
                     </div>
                 </div>
             </div>

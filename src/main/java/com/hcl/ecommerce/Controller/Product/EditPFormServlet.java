@@ -1,8 +1,8 @@
-package com.hcl.ecommerce.Controller;
+package com.hcl.ecommerce.Controller.Product;
 
-import com.hcl.ecommerce.Dao.UserDao;
+import com.hcl.ecommerce.Dao.ProductDao;
 import com.hcl.ecommerce.Model.DbCon;
-import com.hcl.ecommerce.Model.User;
+import com.hcl.ecommerce.Model.Product;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -10,17 +10,17 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "ShowEditForm", value = "/edit-form")
-public class ShowEditForm extends HttpServlet {
+@WebServlet(name = "EditPFormServlet", value = "/editP-form") //untested
+public class EditPFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDao userDao = null;
+        ProductDao productDao = null;
         try {
-            userDao= new UserDao(DbCon.getConnection());
+            productDao= new ProductDao(DbCon.getConnection());
             int id = Integer.parseInt(request.getParameter("id"));
-            User existingUser = userDao.selectUser(id);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("UpdateUserForm.jsp"); //created later
-            request.setAttribute("user", existingUser);
+            Product existingProduct = productDao.getSingleProduct(id); //double check this method untested
+            RequestDispatcher dispatcher = request.getRequestDispatcher("UpdateProductForm.jsp"); //created later
+            request.setAttribute("product", existingProduct);
             dispatcher.forward(request, response);
 
         } catch (ClassNotFoundException | SQLException e) {

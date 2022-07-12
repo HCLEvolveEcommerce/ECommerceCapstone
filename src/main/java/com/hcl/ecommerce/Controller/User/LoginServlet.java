@@ -1,4 +1,4 @@
-package com.hcl.ecommerce.Controller;
+package com.hcl.ecommerce.Controller.User;
 
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
@@ -19,6 +19,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
+        System.out.println(session.getId());
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String email = request.getParameter("login-email");
@@ -34,7 +35,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("email", user.getEmail());
                     session.setAttribute("usertype", user.getUsertype());
 
-                    response.sendRedirect("adminlist.jsp");
+                    response.sendRedirect("UserList.jsp");
                     System.out.println("Logged in as Admin");
                     System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
                 }
@@ -50,6 +51,8 @@ public class LoginServlet extends HttpServlet {
                 }
             } else {
                 out.print("Invalid Username or Password");
+                session.invalidate(); //closing the session
+                System.out.println(session.getId());
 
             }
         } catch (ClassNotFoundException|SQLException e) {
