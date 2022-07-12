@@ -11,6 +11,8 @@
 # Little Kinks 
 - Design invalid login better
 - Add Shopping Cart (cart visual dropdown upper right hand corner) {redirect to cart.jsp}
+- NavBar Search on Home Page w/ Categories 
+- Redesign Homepage Bootstrap "Make it prettier"
 - "Too many Login Attempts" 
 
 # Currently Working On:
