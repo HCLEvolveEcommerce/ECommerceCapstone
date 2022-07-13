@@ -10,6 +10,11 @@
         request.setAttribute("auth", auth);
     }
 
+    User admin = (User) request.getSession().getAttribute("admin");
+    if(admin!= null){
+        request.setAttribute("admin", admin);
+    }
+
     ProductDao pd = new ProductDao(DbCon.getConnection());
     List<Product> products = pd.getAllProducts();
 
@@ -29,6 +34,7 @@
 <section style=" background-color: #20bf55; background-image:linear-gradient(315deg, #20bf55 0%, #01baef 74%);">
     <div class="text-center container py-5">
         <h4 class="mt-4 mb-5"><strong>Our Selection</strong></h4>
+        <% DbCon.getConnection(); %>
 
         <div class="row">
                 <%if (!products.isEmpty()){

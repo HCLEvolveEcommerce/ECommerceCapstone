@@ -9,6 +9,10 @@
     if(cart_list != null){
         request.setAttribute("cart_list", cart_list );
     }
+    User admin = (User) request.getSession().getAttribute("admin");
+    if(admin!= null){
+        request.setAttribute("admin", admin);
+    }
 %>
 <html>
 <head>

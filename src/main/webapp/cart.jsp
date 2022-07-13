@@ -11,6 +11,12 @@
   if(auth != null){
     request.setAttribute("auth", auth);
   }
+
+  User admin = (User) request.getSession().getAttribute("admin");
+  if(admin!= null){
+    request.setAttribute("admin", admin);
+  }
+
   DecimalFormat format = new DecimalFormat("$#0.00"); //used for formatting
   ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
   List<Cart> cartProduct = null;
@@ -91,7 +97,7 @@
                   </div>
                 </th>
                 <td class="border-0 align-middle"><strong>$<%=c.getPrice()%></strong></td>
-                <td class="border-0 align-middle"><a href="quantity-control" class="btn btn-outline-success btn-small" >+</a><strong> <%=c.getQuantity()%> </strong> <a href="quantity-control" class="btn btn-outline-danger btn-small" >  -</a>
+                <td class="border-0 align-middle"><a href="quantity-control?action=inc&id=<%=c.getId()%>" class="btn btn-outline-success btn-small" >+</a><strong> <%=c.getQuantity()%> </strong> <a href="quantity-control?action=dec&id=<%=c.getId()%>" class="btn btn-outline-danger btn-small" >  -</a>
                 </td>
                 <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
               </tr>

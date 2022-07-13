@@ -16,6 +16,12 @@
   if (auth != null) {
     request.setAttribute("auth", auth);
   }
+
+  User admin = (User) request.getSession().getAttribute("admin");
+  if(admin!= null){
+    request.setAttribute("admin", admin);
+  }
+
   UserDao ud = new UserDao(DbCon.getConnection());
   List<User> users = ud.getAllUsers();
 %>

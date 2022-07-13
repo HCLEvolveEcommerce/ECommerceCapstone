@@ -1,9 +1,16 @@
 <%@ page import="com.hcl.ecommerce.Model.User" %>
+<%@ page import="com.hcl.ecommerce.Dao.UserDao" %>
+<%@ page import="com.hcl.ecommerce.Model.DbCon" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     User auth = (User) request.getSession().getAttribute("auth");
     if(auth != null){
         response.sendRedirect("index.jsp");
+    }
+
+    User admin = (User) request.getSession().getAttribute("admin");
+    if(admin!= null){
+        request.setAttribute("admin", admin);
     }
 
     ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");

@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
             if (user != null) {
                 request.getSession().setAttribute("auth", user);
                 if(Objects.equals(user.getUsertype(), "Admin")) {
+                    request.getSession().setAttribute("admin", user);
                     session.setAttribute("id", user.getId());
                     session.setAttribute("name", user.getName());
                     session.setAttribute("email", user.getEmail());
@@ -50,6 +51,7 @@ public class LoginServlet extends HttpServlet {
                     System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
                 }
             } else {
+                String invalid = "Invalid Login, Please Try Again.";
                 out.print("Invalid Username or Password");
                 session.invalidate(); //closing the session
                 System.out.println(session.getId());

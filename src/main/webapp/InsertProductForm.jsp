@@ -23,6 +23,11 @@
     UserDao ud = new UserDao(DbCon.getConnection());
     List<User> users = ud.getAllUsers();
 
+    User admin = (User) request.getSession().getAttribute("admin");
+    if(admin!= null){
+        request.setAttribute("admin", admin);
+    }
+
     ProductDao pd = new ProductDao(DbCon.getConnection());
     List<Product> products = pd.getAllProducts();
 %>
