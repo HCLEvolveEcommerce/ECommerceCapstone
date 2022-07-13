@@ -10,13 +10,13 @@
 
 # Ideas
 - Design invalid login better
-- Add Shopping Cart (cart visual dropdown upper right hand corner) {redirect to cart.jsp}
 - NavBar Search on Home Page w/ Categories 
 - Redesign Homepage Bootstrap "Make it prettier"
 - "Too many Login Attempts" 
 - Create searchbar for User Lookup
 - Add Quantity Control for Products on index (udpates quantity in cart based on selected amount)
 - Add Coupons w/ Controller, and Updated DAO
+- Implement View Types (control items displayed index)
 
 # Currently Working On:
 - Implement Order Submittal, Order Page, Order History (Admin and User)
