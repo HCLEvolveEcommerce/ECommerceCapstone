@@ -19,7 +19,8 @@
 - Add Coupons w/ Controller, and Updated DAO
 
 # Currently Working On:
-- Implement Order Submittal, Order Page
+- Implement Order Submittal, Order Page, Order History (Admin and User)
+- User Account Page
 - Admin and Client differentiation 
 
 # Priorities After Current Is done 
