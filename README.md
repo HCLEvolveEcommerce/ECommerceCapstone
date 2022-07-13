@@ -26,4 +26,5 @@
 # Priorities After Current Is done 
 - Email Order infromation w/ total
 - Test Cases using JUnit 5
+- Add Log4j
 - Ideas ^^
