@@ -42,6 +42,7 @@ public class AddToCartServlet extends HttpServlet {
                 if (!exist) {
                     cartList.add(cart);
                     response.sendRedirect("index.jsp");
+
                 }
             }
         }

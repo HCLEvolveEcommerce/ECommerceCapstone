@@ -28,9 +28,12 @@
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
+
 <div class="row">
     <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
     <div class="container">
+        <br>
+        <br>
         <h3 class="text-center">List of Users</h3>
         <hr>
         <div class="container text-center">
@@ -39,7 +42,18 @@
             <a href="ProductList.jsp" class="btn btn-success" id="adminButton2">Products Table</a>
         </div>
         <br>
-        <table class="table table-bordered" style="border-width: thick ">
+
+        <!--Search User -->
+        <nav class="navbar bg-light text-center">
+            <form action="select-user" class="container-fluid" method="get">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" name="id" class="form-control" placeholder="email or id" value="search" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </form>
+        </nav>
+
+        <table class="table table-bordered" id="table" style="border-width: thick ">
             <thead style="border-width: thick;">
             <tr>
                 <th>ID</th>

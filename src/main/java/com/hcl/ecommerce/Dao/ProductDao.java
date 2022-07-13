@@ -20,6 +20,7 @@ public class ProductDao {
     private static final String SELECT_ALL_PRODUCTS = "select * from products";
     private static final String QUERY_CHECK = "select * from products WHERE name = ?";
     private static final String DELETE_PRODUCT_SQL = "delete from products where id=?";
+    private static final String SELECT_PRICE_BY_ID = "select price from products where id=?";
     private static final String UPDATE_PRODUCT_SQL = "update products set name = ?, category=?, price=? , image=? where id=?";
     private static final String TYPE_CHECK = "select*from products WHERE productav =?";
 
@@ -144,6 +145,28 @@ public class ProductDao {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
+    }
+
+    public double totalPrice(ArrayList<Cart> cartList){
+        double sum = 0;
+        try{
+            if(cartList.size() > 0){
+                for(Cart item:cartList) {
+                    pst = con.prepareStatement(SELECT_PRICE_BY_ID);
+                    pst.setInt(1, item.getId());
+                    rs = pst.executeQuery();
+
+
+                    while (rs.next()) {
+                        sum += rs.getDouble("price") * item.getQuantity();
+                        String.format("%.20f", sum);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return sum;
     }
 
     public boolean updateProduct(Product product) throws SQLException{

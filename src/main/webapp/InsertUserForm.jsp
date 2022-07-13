@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: dsike
@@ -17,7 +16,6 @@
   if (auth != null) {
     request.setAttribute("auth", auth);
   }
-
   UserDao ud = new UserDao(DbCon.getConnection());
   List<User> users = ud.getAllUsers();
 %>
@@ -31,44 +29,44 @@
 <div class="container col-md-5">
   <div class="card">
     <div class="card-body">
-        <form action="insert-user" method="post">
-          <caption>
-            <h2>
-                Add New User
-            </h2>
-          </caption>
-            <input type="hidden" name="id" />
+      <form action="insert-user" method="post">
+        <caption>
+          <h2>
+            Add New User
+          </h2>
+        </caption>
+        <input type="hidden" name="id" />
 
-          <fieldset class="form-group">
-            <label>User Name</label> <input type="text"
-                                            class="form-control"
-                                            name="name" required="required">
-          </fieldset>
+        <fieldset class="form-group">
+          <label>User Name</label> <input type="text"
+                                          class="form-control"
+                                          name="name" required="required">
+        </fieldset>
 
-          <fieldset class="form-group">
-            <label>User Email</label> <input type="email"
-                                             class="form-control"
-                                             name="email" required="required">
-          </fieldset>
-
-          <fieldset class="form-group">
-            <label>Password</label> <input type="text" minlength="5"
+        <fieldset class="form-group">
+          <label>User Email</label> <input type="email"
                                            class="form-control"
-                                           name="password" required="required">
-          </fieldset>
+                                           name="email" required="required">
+        </fieldset>
 
-          <fieldset class="form-group">
-            <label>User Type</label>
-            <br>
-            <select class="form-group" aria-label="Default select example" name="usertype" required="required">
-              <option value='${null}'>Select User Type</option>
-              <option value="Admin">Admin</option>
-              <option value="Client">Client</option>
-            </select>
-          </fieldset>
+        <fieldset class="form-group">
+          <label>Password</label> <input type="text" minlength="5"
+                                         class="form-control"
+                                         name="password" required="required">
+        </fieldset>
 
-          <button type="submit" class="btn btn-success">Save</button>
-        </form>
+        <fieldset class="form-group">
+          <label>User Type</label>
+          <br>
+          <select class="form-group" aria-label="Default select example" name="usertype" required="required">
+            <option value='${null}'>Select User Type</option>
+            <option value="Admin">Admin</option>
+            <option value="Client">Client</option>
+          </select>
+        </fieldset>
+
+        <button type="submit" class="btn btn-success">Save</button>
+      </form>
     </div>
   </div>
 </div>

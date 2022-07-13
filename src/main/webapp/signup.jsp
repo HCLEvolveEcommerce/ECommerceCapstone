@@ -5,6 +5,10 @@
     if(auth != null){
         request.setAttribute("auth", auth);
     }
+    ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+    if(cart_list != null){
+        request.setAttribute("cart_list", cart_list );
+    }
 %>
 <html>
 <head>
