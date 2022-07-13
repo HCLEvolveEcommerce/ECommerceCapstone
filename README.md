@@ -16,6 +16,7 @@
 - "Too many Login Attempts" 
 - Create searchbar for User Lookup
 - Add Quantity Control for Products on index (udpates quantity in cart based on selected amount)
+- Add Coupons w/ Controller, and Updated DAO
 
 # Currently Working On:
 - Implement Order Submittal, Order Page
