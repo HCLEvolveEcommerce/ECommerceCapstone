@@ -14,6 +14,7 @@
 - NavBar Search on Home Page w/ Categories 
 - Redesign Homepage Bootstrap "Make it prettier"
 - "Too many Login Attempts" 
+- Create searchbar for User Lookup
 
 # Currently Working On:
 - Implement Update, Delete
