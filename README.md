@@ -4,7 +4,7 @@
 - Session handling 
 - User Logout, Login
 - User Signup 
-- Displayable DB Values for Users and Products 
+- Displayable DB Values for Users and Products, for Admins and Users
 - Clean Project Structure
 - BootStrap 
 
