@@ -4,23 +4,26 @@
 - Session handling 
 - User Logout, Login
 - User Signup 
-- Displayable DB Values for Users and Products 
+- Displayable DB Values for Users and Products, for Admins and Users
 - Clean Project Structure
 - BootStrap 
 
-# Little Kinks 
+# Ideas
 - Design invalid login better
 - Add Shopping Cart (cart visual dropdown upper right hand corner) {redirect to cart.jsp}
 - NavBar Search on Home Page w/ Categories 
 - Redesign Homepage Bootstrap "Make it prettier"
 - "Too many Login Attempts" 
+- Create searchbar for User Lookup
+- Add Quantity Control for Products on index (udpates quantity in cart based on selected amount)
+- Add Coupons w/ Controller, and Updated DAO
 
 # Currently Working On:
-- Implement Update, Delete
-- Implement Order Submittal, Order Page
+- Implement Order Submittal, Order Page, Order History (Admin and User)
+- User Account Page
 - Admin and Client differentiation 
 
 # Priorities After Current Is done 
 - Email Order infromation w/ total
 - Test Cases using JUnit 5
-- List of Kinks ^^
+- Ideas ^^
