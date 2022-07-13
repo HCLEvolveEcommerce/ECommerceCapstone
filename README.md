@@ -15,6 +15,7 @@
 - Redesign Homepage Bootstrap "Make it prettier"
 - "Too many Login Attempts" 
 - Create searchbar for User Lookup
+- Add Quantity Control for Products on index (udpates quantity in cart based on selected amount)
 
 # Currently Working On:
 - Implement Update, Delete
