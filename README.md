@@ -18,7 +18,6 @@
 - Add Quantity Control for Products on index (udpates quantity in cart based on selected amount)
 
 # Currently Working On:
-- Implement Update, Delete
 - Implement Order Submittal, Order Page
 - Admin and Client differentiation 
 
