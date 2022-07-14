@@ -24,7 +24,7 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="cart.jsp">Cart <span class="badge badge-dark px-2">${cart_list.size()}</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="ShoppingCart.jsp">Cart <span class="badge badge-dark px-2">${cart_list.size()}</span></a></li>
             <%if (auth != null) {%>
                 <%if (admin != null) {%>
                      <li class="nav-item"><a class="nav-link" href="UserList.jsp">User List </a></li>

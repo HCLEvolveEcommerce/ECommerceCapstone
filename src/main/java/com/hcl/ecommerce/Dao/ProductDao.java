@@ -198,6 +198,36 @@ public class ProductDao {
         return sum;
     }
 
+    public double totalTax(ArrayList<Cart> cartList){
+        double sum = 0;
+        double tax = 0;
+        int shipping = 10;
+
+
+        try{
+            if(cartList.size() > 0){
+                for(Cart item:cartList) {
+                    pst = con.prepareStatement(SELECT_PRICE_BY_ID);
+                    pst.setInt(1, item.getId());
+                    rs = pst.executeQuery();
+
+
+                    while (rs.next()) {
+                        sum += rs.getDouble("price") * item.getQuantity();
+                        String.format("%.20f", sum);
+                    }
+                }
+                tax = sum * .0625;
+                sum += tax;
+                sum += shipping;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return tax;
+    }
+
+
     public boolean updateProduct(Product product) throws SQLException{
         boolean rowUpdated;
         try (Connection connection = getConnection();

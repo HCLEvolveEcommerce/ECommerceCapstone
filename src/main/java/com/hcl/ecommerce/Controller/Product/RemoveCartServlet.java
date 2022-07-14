@@ -26,7 +26,7 @@ public class RemoveCartServlet extends HttpServlet {
                     for (Cart a : cartList) {
                         if (a.getId() == id) {
                             cartList.remove(a);
-                            response.sendRedirect("cart.jsp");
+                            response.sendRedirect("ShoppingCart.jsp");
                         }
 
                     }

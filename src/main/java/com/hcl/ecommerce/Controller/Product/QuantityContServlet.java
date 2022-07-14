@@ -25,7 +25,7 @@ public class QuantityContServlet extends HttpServlet {
                             int quantity = c.getQuantity();
                             quantity++;
                             c.setQuantity(quantity);
-                            response.sendRedirect("cart.jsp");
+                            response.sendRedirect("ShoppingCart.jsp");
                         }
                     }
                 }
@@ -35,7 +35,7 @@ public class QuantityContServlet extends HttpServlet {
                             int quantity = c.getQuantity();
                             quantity--;
                             c.setQuantity(quantity);
-                            response.sendRedirect("cart.jsp");
+                            response.sendRedirect("ShoppingCart.jsp");
                         }
                     }
                 }

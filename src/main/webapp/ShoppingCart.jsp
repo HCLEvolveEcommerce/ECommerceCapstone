@@ -37,6 +37,15 @@
     request.setAttribute("total", format.format(total));
   }
 
+  DecimalFormat format2 = new DecimalFormat("$#0.00"); //used for formatting
+  if(cart_list != null){
+    ProductDao productDao = new ProductDao(DbCon.getConnection());
+    cartProduct = productDao.ProductCart(cart_list);
+    double taxTotal = productDao.totalTax(cart_list);
+    request.setAttribute("cart_list", cart_list);
+    request.setAttribute("taxTotal", format.format(taxTotal));
+  }
+
 %>
 <html>
 <head>
@@ -144,11 +153,16 @@
             <ul class="list-unstyled mb-4">
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>${(subTotal)}</strong></li>
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>${(taxTotal)}</strong></li>
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                 <h5 class="font-weight-bold">${(total)}</h5>
               </li>
-            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
+              <%if(auth == null){%>
+                </ul><a href="guest-order" class="btn btn-dark rounded-pill py-2 btn-block">Checkout as Guest</a>
+                </ul><a href="CheckoutLogin.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Login</a>
+              <%} else{%>
+                </ul><a href="user-order" class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a>
+                  <%}%>
           </div>
         </div>
       </div>
