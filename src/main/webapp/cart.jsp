@@ -23,6 +23,15 @@
   if(cart_list != null){
     ProductDao productDao = new ProductDao(DbCon.getConnection());
     cartProduct = productDao.ProductCart(cart_list);
+    double subTotal = productDao.subTotalPrice(cart_list);
+    request.setAttribute("cart_list", cart_list);
+    request.setAttribute("subTotal", format.format(subTotal));
+  }
+
+  DecimalFormat format1 = new DecimalFormat("$#0.00"); //used for formatting
+  if(cart_list != null){
+    ProductDao productDao = new ProductDao(DbCon.getConnection());
+    cartProduct = productDao.ProductCart(cart_list);
     double total = productDao.totalPrice(cart_list);
     request.setAttribute("cart_list", cart_list);
     request.setAttribute("total", format.format(total));
@@ -99,7 +108,7 @@
                 <td class="border-0 align-middle"><strong>$<%=c.getPrice()%></strong></td>
                 <td class="border-0 align-middle"><a href="quantity-control?action=inc&id=<%=c.getId()%>" class="btn btn-outline-success btn-small" >+</a><strong> <%=c.getQuantity()%> </strong> <a href="quantity-control?action=dec&id=<%=c.getId()%>" class="btn btn-outline-danger btn-small" >  -</a>
                 </td>
-                <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                <td class="border-0 align-middle"><a href="remove-cart?action=remove&id=<%=c.getId()%>" class="btn btn-outline-danger btn-small"><i class="fa fa-trash"> Remove </i></a></td>
               </tr>
               <%}%>
               <%}%>
@@ -133,13 +142,13 @@
           <div class="p-4">
             <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
             <ul class="list-unstyled mb-4">
-              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>${(subTotal)}</strong></li>
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                 <h5 class="font-weight-bold">${(total)}</h5>
               </li>
-            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
           </div>
         </div>
       </div>

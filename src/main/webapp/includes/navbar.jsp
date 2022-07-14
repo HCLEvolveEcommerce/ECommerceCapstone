@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-md navbar-dark"
          style="background-color: black">
         <div>
-            <a href="index.jsp" class="navbar-brand"> Evolve ECommerce  </a>
+            <a href="index.jsp" class="navbar-brand px-4">  Evolve ECommerce  </a>
         </div>
 
         <ul class="navbar-nav ml-auto">

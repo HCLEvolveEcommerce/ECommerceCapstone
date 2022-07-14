@@ -147,8 +147,9 @@ public class ProductDao {
                 }
     }
 
-    public double totalPrice(ArrayList<Cart> cartList){
+    public double subTotalPrice(ArrayList<Cart> cartList){
         double sum = 0;
+
         try{
             if(cartList.size() > 0){
                 for(Cart item:cartList) {
@@ -162,6 +163,34 @@ public class ProductDao {
                         String.format("%.20f", sum);
                     }
                 }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return sum;
+    }
+
+    public double totalPrice(ArrayList<Cart> cartList){
+        double sum = 0;
+        int shipping = 10;
+
+
+        try{
+            if(cartList.size() > 0){
+                for(Cart item:cartList) {
+                    pst = con.prepareStatement(SELECT_PRICE_BY_ID);
+                    pst.setInt(1, item.getId());
+                    rs = pst.executeQuery();
+
+
+                    while (rs.next()) {
+                        sum += rs.getDouble("price") * item.getQuantity();
+                        String.format("%.20f", sum);
+                    }
+                }
+                double tax = sum * .0625;
+                sum += tax;
+                sum += shipping;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

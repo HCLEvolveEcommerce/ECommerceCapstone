@@ -51,9 +51,9 @@ public class LoginServlet extends HttpServlet {
                     System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
                 }
             } else {
+                response.sendRedirect("login.jsp");
                 String invalid = "Invalid Login, Please Try Again.";
-                out.print("Invalid Username or Password");
-                session.invalidate(); //closing the session
+                request.getSession().setAttribute("invalid", invalid);
                 System.out.println(session.getId());
 
             }

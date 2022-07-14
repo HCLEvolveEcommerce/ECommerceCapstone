@@ -1,3 +1,4 @@
+
 <%@ page import="com.hcl.ecommerce.Model.User" %>
 <%@ page import="com.hcl.ecommerce.Dao.UserDao" %>
 <%@ page import="com.hcl.ecommerce.Model.DbCon" %>
@@ -17,6 +18,7 @@
     if(cart_list != null){
         request.setAttribute("cart_list", cart_list );
     }
+
 %>
 <html>
 <head>
@@ -27,6 +29,7 @@
 
 <style>
     .gradient-custom {
+        height: 100%;
         /* fallback for old browsers */
         background: #6a11cb;
 
@@ -45,12 +48,11 @@
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
-
                         <div class="mb-md-5 mt-md-4 pb-5">
-
                             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                            <style>#invalidtext{color: crimson;}</style>
+                            <p class="btn btn-outline-dark" id="invalidtext"><strong>${invalid}</strong></p>
                             <p class="text-white-50 mb-5">Please enter your login and password!</p> <!-- success account created please login -->
-
                             <div class="form-outline form-white mb-4">
                                 <input type="email"
                                        id="typeEmailX" class="form-control form-control-lg" placeholder="Enter Email" name="login-email" required/>
@@ -61,7 +63,6 @@
                                 <input type="password" id="typePasswordX" class="form-control form-control-lg" name="login-password" required/>
                                 <label class="form-label" for="typePasswordX">Password</label>
                             </div>
-
                             <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p> <!-- Develop this -->
 
                             <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
@@ -79,7 +80,6 @@
         </div>
     </div>
 </form>
-
 
 
 <%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
