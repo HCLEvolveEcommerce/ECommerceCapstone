@@ -6,15 +6,18 @@
 - User Signup 
 - Displayable DB Values for Users and Products, for Admins and Users
 - Clean Project Structure
-- BootStrap 
+- BootStrap 5
+- Invalid Login
+- Admin and Client Differentiation 
+- Remove from Cart and quantity funtionality 
+- Calculated Sales Tax and shipping w/ subtotal and total 
+
 
 # Ideas
-- Design invalid login better
 - NavBar Search on Home Page w/ Categories 
 - Redesign Homepage Bootstrap "Make it prettier"
 - "Too many Login Attempts" 
 - Create searchbar for User Lookup
-- Add Quantity Control for Products on index (udpates quantity in cart based on selected amount)
 - Add Coupons w/ Controller, and Updated DAO
 - Implement View Types (control items displayed index)
 
@@ -23,7 +26,7 @@
 - User Account Page
 
 # Priorities After Current Is done 
-- Email Order infromation w/ total
+- Email Order information w/ total
 - Test Cases using JUnit 5
 - Add Log4j
 - Ideas ^^
