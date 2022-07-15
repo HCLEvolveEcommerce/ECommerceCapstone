@@ -108,14 +108,14 @@
               <tr>
                 <th scope="row" class="border-0">
                   <div class="p-2">
-                    <img src="product-image/<%= c.getImage()%>" alt="" width="70" class="img-fluid rounded shadow-sm">
+                    <img src="product-image/<%= c.getImage()%>" alt="" width="70" class="img-fluid rounded shadow-sm" name="image">
                     <div class="ml-3 d-inline-block align-middle">
-                      <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><%=c.getName()%></a></h5><span class="text-muted font-weight-normal font-italic d-block"><%=c.getCategory()%></span>
+                      <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle" name="name"><%=c.getName()%></a></h5><span class="text-muted font-weight-normal font-italic d-block" name="category"><%=c.getCategory()%></span>
                     </div>
                   </div>
                 </th>
                 <td class="border-0 align-middle"><strong>$<%=c.getPrice()%></strong></td>
-                <td class="border-0 align-middle"><a href="quantity-control?action=inc&id=<%=c.getId()%>" class="btn btn-outline-success btn-small" >+</a><strong> <%=c.getQuantity()%> </strong> <a href="quantity-control?action=dec&id=<%=c.getId()%>" class="btn btn-outline-danger btn-small" >  -</a>
+                <td class="border-0 align-middle"><a href="quantity-control?action=inc&id=<%=c.getId()%>"class="btn btn-outline-success btn-small" >+</a><strong> <%=c.getQuantity()%> </strong> <a href="quantity-control?action=dec&id=<%=c.getId()%>" class="btn btn-outline-danger btn-small" >  -</a>
                 </td>
                 <td class="border-0 align-middle"><a href="remove-cart?action=remove&id=<%=c.getId()%>" class="btn btn-outline-danger btn-small"><i class="fa fa-trash"> Remove </i></a></td>
               </tr>
@@ -158,10 +158,11 @@
                 <h5 class="font-weight-bold">${(total)}</h5>
               </li>
               <%if(auth == null){%>
-                </ul><a href="guest-order" class="btn btn-dark rounded-pill py-2 btn-block">Checkout as Guest</a>
+                </ul><a href="order-all" class="btn btn-dark rounded-pill py-2 btn-block">Checkout as Guest</a>
                 </ul><a href="CheckoutLogin.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Login</a>
               <%} else{%>
-                </ul><a href="user-order" class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a>
+
+                </ul><a href="order-all"  class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a>
                   <%}%>
           </div>
         </div>

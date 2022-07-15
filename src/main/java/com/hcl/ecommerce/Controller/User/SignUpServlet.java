@@ -4,10 +4,12 @@ import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
 import com.hcl.ecommerce.Model.User;
 
+import javax.jws.soap.SOAPBinding;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.net.UnknownServiceException;
 import java.sql.SQLException;
 
 @WebServlet(name = "SignUpServlet", value = "/signup-user")
@@ -26,7 +28,8 @@ public class SignUpServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
-        response.sendRedirect("login.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/email-signup");
+        dispatcher.forward(request, response);
     }
 
     @Override

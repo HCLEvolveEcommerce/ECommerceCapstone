@@ -45,6 +45,7 @@
         <div class="container text-center">
             <a href="InsertProductForm.jsp" class="btn btn-success" >Add New Product</a>
             <a href="UserList.jsp" class="btn btn-success" >User Table</a>
+            <a href="OrderList.jsp" class="btn btn-success" id="adminButton3">Order Table</a>
         </div>
         <br>
         <table class="table table-bordered" style="border-width: thick ">

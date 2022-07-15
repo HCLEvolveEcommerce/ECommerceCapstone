@@ -56,7 +56,7 @@ background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);">
                                                            name="usertype" required="required">
                         </fieldset>
 
-                    <button type="submit" class="btn btn-success">Save</button>
+                    <a href="email-signup"><button type="submit" class="btn btn-success">Save</button></a>
                 </form>
         </div>
 

@@ -63,7 +63,7 @@
                         <h6 class="mb-3">$<%=p.getPrice()%>
                         </h6>
                         <a href="add-cart?id=<%=p.getId()%>" class="btn btn-dark">Add To Cart</a>
-                        <a href="add-cart?id=<%=p.getId()%>" class="btn btn-secondary">Buy Now</a>
+                        <a href="user-order?quantity=1&id=<%=p.getId()%>" class="btn btn-secondary">Buy Now</a>
                     </div>
                 </div>
             </div>
