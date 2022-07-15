@@ -11,6 +11,10 @@
 - Admin and Client Differentiation 
 - Remove from Cart and quantity funtionality 
 - Calculated Sales Tax and shipping w/ subtotal and total 
+- Mail sends on signup
+- Order checkout for guest and User functionailty 
+- Order List for Admin
+- Implemeted buy now as User or Guest 
 
 
 # Ideas
@@ -22,11 +26,12 @@
 - Implement View Types (control items displayed index)
 
 # Currently Working On:
-- Implement Order Submittal, Order Page, Order History (Admin and User)
+- Order Page, Order History (User)
 - User Account Page
+- Add modal for buy now button for guest checkout or user checkout if not already logged in (reminder)
 
 # Priorities After Current Is done 
-- Email Order information w/ total
+- Email Order information w/ total (close to done)
 - Test Cases using JUnit 5
 - Add Log4j
 - Ideas ^^
