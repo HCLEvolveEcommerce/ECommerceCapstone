@@ -29,7 +29,7 @@
                 <%if (admin != null) {%>
                      <li class="nav-item"><a class="nav-link" href="UserList.jsp">User List </a></li>
                 <%}%>
-            <li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
+            <li class="nav-item"><a class="nav-link" href="AccountPage.jsp">Account</a></li>
             <li class="nav-item"><a class="nav-link" href="log-out">Logout</a></li>
             <%
             } else {

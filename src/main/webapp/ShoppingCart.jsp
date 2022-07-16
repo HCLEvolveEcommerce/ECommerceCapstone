@@ -162,7 +162,7 @@
                 </ul><a href="CheckoutLogin.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Login</a>
               <%} else{%>
 
-                </ul><a href="order-all"  class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a>
+            </ul><a href="order-all"  class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a>
                   <%}%>
           </div>
         </div>

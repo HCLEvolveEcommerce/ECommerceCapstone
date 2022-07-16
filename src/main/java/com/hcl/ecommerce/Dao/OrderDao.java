@@ -1,5 +1,6 @@
 package com.hcl.ecommerce.Dao;
 
+import com.hcl.ecommerce.Model.DbCon;
 import com.hcl.ecommerce.Model.Order;
 import com.hcl.ecommerce.Model.Product;
 
@@ -14,8 +15,9 @@ public class OrderDao {
     private static final String INSERT_ORDERS_SQL = "INSERT INTO orders" + " (product_id, user_id, order_quantity, order_date) VALUES " + " (?, ?, ?, ?);";
     private static final String SELECT_ORDER_BY_ID = "select * from orders where id=?";
     private static final String SELECT_ALL_ORDERS = "select * from orders";
+    private static final String SELECT_USER_ORDERS = "select * from orders where user_id=? order by orders.order_id desc";
     private static final String QUERY_CHECK = "select * from orders WHERE name = ?";
-    private static final String DELETE_ORDERS_SQL = "delete from orders where id=?";
+    private static final String DELETE_ORDERS_SQL = "delete from orders where user_id=?";
     private static final String SELECT_ORDERS_BY_ID = "select price from orders where id=?";
     private static final String UPDATE_ORDER_SQL = "update orders set name = ?, category=?, price=? , image=? where id=?";
 
@@ -67,6 +69,38 @@ public class OrderDao {
                 row.setOrderDate(resultSet.getString("order_date"));
                 row.setQuantity(resultSet.getInt("order_quantity"));
 
+                book.add(row);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return book;
+    }
+
+    public List<Order> clientOrders(int id) {
+        List<Order> book = new ArrayList<>();
+        try {
+
+            query = SELECT_USER_ORDERS;
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Order row = new Order();
+                ProductDao productDao= new ProductDao(connection);
+                int productID = resultSet.getInt("product_id");
+                Product product = productDao.getSingleProduct(productID);
+                row.setOrderID(resultSet.getInt("order_id"));
+                row.setId(productID);
+                row.setName(product.getName());
+                row.setCategory(product.getCategory());
+                row.setQuantity(resultSet.getInt("order_quantity"));
+                row.setOrderDate(resultSet.getString("order_date"));
+                row.setImage(product.getImage());
+                row.setPrice(product.getPrice());
                 book.add(row);
             }
 

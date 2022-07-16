@@ -24,11 +24,12 @@ public class OrderAllServlet extends HttpServlet {
             Date date = new Date();
             ArrayList<Cart> cart_list = (ArrayList<Cart>)  request.getSession().getAttribute("cart-list");
             User auth = (User) session.getAttribute("auth");
+            Order order = new Order();
 
             if (cart_list != null) {
                 if (auth != null){
                     for (Cart c: cart_list){
-                        Order order = new Order();
+
                         order.setId(c.getId());
                         order.setUserID(auth.getId());
                         order.setQuantity(c.getQuantity());
@@ -40,12 +41,14 @@ public class OrderAllServlet extends HttpServlet {
                         System.out.println("end of for");
 
                     }
-                    response.sendRedirect("orders.jsp");
+                    session.setAttribute("orderId", order.getOrderID());
+                    session.setAttribute("orderPrice", order.getPrice());
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/order-email");
+                    dispatcher.forward(request, response);
                     cart_list.clear();
                 }
                 else {
                     for (Cart c: cart_list){
-                        Order order = new Order();
                         order.setId(c.getId());
                         order.setUserID(0);
                         order.setQuantity(c.getQuantity());
@@ -55,12 +58,10 @@ public class OrderAllServlet extends HttpServlet {
                         orderDao.insertOrder(order);
                         System.out.println("end of for");
                     }
-                    response.sendRedirect("orders.jsp");
                     cart_list.clear();
-
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/order-email");
+                    dispatcher.forward(request, response);
                 }
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/order-email");
-                dispatcher.forward(request, response);
             }
 
         } catch (Exception e) {

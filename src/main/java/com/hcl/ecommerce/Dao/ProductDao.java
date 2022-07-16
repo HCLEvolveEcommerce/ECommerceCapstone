@@ -1,6 +1,7 @@
 package com.hcl.ecommerce.Dao;
 
 import com.hcl.ecommerce.Model.Cart;
+import com.hcl.ecommerce.Model.Order;
 import com.hcl.ecommerce.Model.Product;
 import com.hcl.ecommerce.Model.User;
 

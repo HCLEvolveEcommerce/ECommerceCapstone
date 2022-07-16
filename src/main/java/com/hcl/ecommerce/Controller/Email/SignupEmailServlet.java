@@ -17,13 +17,13 @@ public class SignupEmailServlet extends HttpServlet{
         System.out.println("Im called 2");
 
         // reads form fields
-        String recipient = request.getParameter("email");
+        String toAddress = request.getParameter("email");
         String header = "Welcome to Evolve";
         String message = "Conratulations on creating your account. Here at Evolve Ecommerce Solutions we care about any inquiries you might have. Please feel free to reach me at dsikes313@gmail.com";
 
 
         try {
-            SendEmail.sendEmail(recipient, message, header);
+            SendEmail.sendEmail(toAddress, message, header);
             response.sendRedirect("login.jsp");
         } catch (Exception ex) {
             ex.printStackTrace();

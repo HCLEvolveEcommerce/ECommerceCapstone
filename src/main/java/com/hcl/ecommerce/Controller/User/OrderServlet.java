@@ -44,6 +44,7 @@ public class OrderServlet extends HttpServlet {
 
                 OrderDao orderDao = new OrderDao(DbCon.getConnection());
                 orderDao.insertOrder(order);
+                response.sendRedirect("AccountPage.jsp");
 
 
 

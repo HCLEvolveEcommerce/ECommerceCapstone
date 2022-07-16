@@ -72,6 +72,12 @@
       <scope>compile</scope>
     </dependency>
 
+<!--    <dependency>-->
+<!--      <groupId>com.stripe</groupId>-->
+<!--      <artifactId>stripe-java</artifactId>-->
+<!--      <version>{VERSION}</version>  &lt;!&ndash;change this&ndash;&gt;-->
+<!--    </dependency>-->
+
 
   </dependencies>
 
