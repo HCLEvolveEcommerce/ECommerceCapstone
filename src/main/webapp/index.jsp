@@ -30,48 +30,155 @@
 </head>
 <body class="gradient-custom">
 <%@include file="includes/navbar.jsp"%>
+<section class="section-intro bg-light padding-y-lg" style="background-image:url(product-image/mountain.png)">
 
-<section style=" background-color: #20bf55; background-image:linear-gradient(315deg, #20bf55 0%, #01baef 74%);">
-    <div class="text-center container py-5">
-        <h4 class="mt-4 mb-5"><strong>Our Selection</strong></h4>
-        <% DbCon.getConnection(); %>
+    <div class="container">
+
+        <article class="my-5 padding-y-lg text-center">
+            <h1 class="display-4 text-black"> Luxury Products<br> At Your Fingertips  </h1>
+            <p class="lead text-black">Trendy Products, Quality Material, Excellent Service</p>
+            <a href="#" class="btn btn-outline-dark"> Learn more </a>
+        </article>
+
+    </div> <!-- container end.// -->
+
+
+</section>
+
+
+
+<section class="bg-light padding-y">
+    <div class="container">
+
+        <header class="section-heading mt-2 mb-5">
+            <h3 class="section-title">Why choose us</h3>
+        </header>
+
+        <div class="row mb-4">
+            <div class="col-lg-4 col-md-6">
+                <figure class="itemside align-items-center mb-4">
+                    <div class="aside">
+					<span class="rounded-circle shadow-sm text-dark icon-lg bg-white">
+						<i class="fa fa-money-bill"></i>
+					</span>
+                    </div>
+                    <figcaption class="info">
+                        <h6 class="title">Reasonable prices</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                    </figcaption>
+                </figure> <!-- itemside // -->
+            </div><!-- col // -->
+            <div class="col-lg-4 col-md-6">
+                <figure class="itemside align-items-center  mb-4">
+                    <div class="aside">
+					<span class="rounded-circle shadow-sm text-dark icon-lg bg-white">
+						<i class="fa fa-star"></i>
+					</span>
+                    </div>
+                    <figcaption class="info">
+                        <h6 class="title">Best quality</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                    </figcaption>
+                </figure> <!-- itemside // -->
+            </div><!-- col // -->
+            <div class="col-lg-4 col-md-6">
+                <figure class="itemside align-items-center  mb-4">
+                    <div class="aside">
+					<span class="rounded-circle shadow-sm text-darkicon-lg bg-white">
+						<i class="fa fa-plane"></i>
+					</span>
+                    </div>
+                    <figcaption class="info">
+                        <h6 class="title">Worldwide shipping</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                    </figcaption>
+                </figure> <!-- itemside // -->
+            </div> <!-- col // -->
+            <div class="col-lg-4 col-md-6">
+                <figure class="itemside align-items-center  mb-4">
+                    <div class="aside">
+					<span class="rounded-circle shadow-sm text-dark icon-lg bg-white">
+						<i class="fa fa-users"></i>
+					</span>
+                    </div>
+                    <figcaption class="info">
+                        <h6 class="title">Customer satisfaction</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                    </figcaption>
+                </figure> <!-- itemside // -->
+            </div><!-- col // -->
+            <div class="col-lg-4 col-md-6">
+                <figure class="itemside align-items-center mb-4">
+                    <div class="aside">
+					<span class="rounded-circle shadow-sm text-dark icon-lg bg-white">
+						<i class="fa fa-thumbs-up"></i>
+					</span>
+                    </div>
+                    <figcaption class="info">
+                        <h6 class="title">Happy customers</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                    </figcaption>
+                </figure> <!-- itemside // -->
+            </div><!-- col // -->
+            <div class="col-lg-4 col-md-6">
+                <figure class="itemside align-items-center mb-4">
+                    <div class="aside">
+					<span class="rounded-circle shadow-sm text-dark icon-lg bg-white">
+						<i class="fa fa-box"></i>
+					</span>
+                    </div>
+                    <figcaption class="info">
+                        <h6 class="title">Thousand items</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                    </figcaption>
+                </figure> <!-- itemside // -->
+            </div> <!-- col // -->
+        </div>
+    </div> <!-- container end.// -->
+</section>
+
+
+
+
+
+<section class="padding-y">
+    <div class="container">
+
+        <header class="section-heading">
+            <h4 class="section-title">Featured Products</h4>
+        </header>
 
         <div class="row">
-                <%if (!products.isEmpty()){
+            <%if (!products.isEmpty()){
                 for(Product p:products){%>
-            <div class="col-lg-4 col-md-12 mb-4">
-                <div class="card">
-                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-                         data-mdb-ripple-color="light">
-                        <img src="product-image/<%= p.getImage()%>"
-                             class="w-100" alt="Product Images"/>
-                        <a href="#!">
-                            <div class="hover-overlay">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </div>
-                        </a>
+            <div class="col-lg-6 col-md-1 col-sm-6">
+                <figure class="card card-product-grid">
+                    <div class="img-wrap">
+                        <img src="product-image/<%= p.getImage()%>">
                     </div>
-                    <div class="card-body">
-                        <a href="" class="text-reset">
-                            <h5 class="card-title mb-3"><%= p.getName()%>
-                            </h5>
-                        </a>
-                        <a href="" class="text-reset">
-                            <p><%=p.getCategory()%>
-                            </p>
-                        </a>
-                        <h6 class="mb-3">$<%=p.getPrice()%>
-                        </h6>
-                        <a href="add-cart?id=<%=p.getId()%>" class="btn btn-dark">Add To Cart</a>
-                        <a href="user-order?quantity=1&id=<%=p.getId()%>" class="btn btn-secondary">Buy Now</a>
-                    </div>
-                </div>
+                    <figcaption class="info-wrap border-bottom mx-auto">
+                        <div class="price-wrap">
+                            <span class="price">$<%=p.getPrice()%></span>
+                        </div> <!-- price-wrap.// -->
+                        <p class="title mb-2"><%= p.getName()%></p>
+
+                        <a href="add-cart?id=<%=p.getId()%>" class="btn btn-outline-primary">Add to cart</a>
+                        <a href="user-order?quantity=1&id=<%=p.getId()%>" class="btn btn-success">Buy Now</a>
+                        <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
+                    </figcaption>
+                </figure>
             </div>
-
-                <%}
+            <%}
             }
-        %>
+            %>
+        </div>
+</section>
 
-            <%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
+
+
+
+
+
+<%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
 </body>
 </html>

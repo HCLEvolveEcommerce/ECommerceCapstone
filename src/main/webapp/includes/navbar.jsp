@@ -13,29 +13,40 @@
 <html>
 <head>
     <title>Title</title>
+    <!-- Bootstrap css -->
+    <link href="css/bootstrap.css?v=2.0" rel="stylesheet" type="text/css" />
+
+    <!-- Custom css -->
+    <link href="css/ui.css?v=2.0" rel="stylesheet" type="text/css" />
+    <link href="css/responsive.css?v=2.0" rel="stylesheet" type="text/css" />
+
+    <!-- Font awesome 5 -->
+    <link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark"
+    <nav class="navbar navbar-expand-lg navbar-dark"
          style="background-color: black">
-        <div>
-            <a href="index.jsp" class="navbar-brand px-4">  Evolve ECommerce  </a>
-        </div>
+        <a href="index.jsp" class="navbar-brand">
+            <img height="70" width="70" src="product-image/Evolve%20(1).png">
+            Evolve Ecommerce
+        </a>
 
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="ShoppingCart.jsp">Cart <span class="badge badge-dark px-2">${cart_list.size()}</span></a></li>
+        <ul class="navbar-nav ms-lg-auto">
+            <a class="nav-link" href="index.jsp"><i class="fas fa-home"></i><span class="ms-1 d-none d-sm-inline-block">Home</span></a>
+            <%--            <a class="nav-link" href="stripe-checkout"><i class="fas fa-home"></i><span class="ms-1 d-none d-sm-inline-block">Stripe</span></a>--%>
+            <a class="nav-link" href="ShoppingCart.jsp"><i class="fa fa-shopping-cart"></i><span class="ms-1 d-none d-sm-inline-block">Cart </span><span class="badge badge px-2">${cart_list.size()}</span></a>
             <%if (auth != null) {%>
-                <%if (admin != null) {%>
-                     <li class="nav-item"><a class="nav-link" href="UserList.jsp">User List </a></li>
-                <%}%>
-            <li class="nav-item"><a class="nav-link" href="AccountPage.jsp">Account</a></li>
-            <li class="nav-item"><a class="nav-link" href="log-out">Logout</a></li>
+            <%if (admin != null) {%>
+            <a class="nav-link" href="UserList.jsp"><i class="fa fa-user"></i><span class="ms-1 d-none d-sm-inline-block">User List </span></a>
+            <%}%>
+            <a class="nav-link" href="AccountPage.jsp"><i class="fas fa-user-circle"></i><span class="ms-1 d-none d-sm-inline-block">Account </span></a>
+            <a class="nav-link" href="log-out"><i class="fas fa-user-alt-slash"></i><span class="ms-1 d-none d-sm-inline-block">Logout </span></a>
             <%
             } else {
             %>
-            <li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="signup.jsp">Signup</a></li>
+            <a class="nav-link" href="login.jsp"><i class="fas fa-user-check"></i><span class="ms-1 d-none d-sm-inline-block">Sign in  </span></a>
+            <a class="nav-link" href="signup.jsp"><i class="fas fa-user-plus"></i><span class="ms-1 d-none d-sm-inline-block">Signup </span></a>
             <%
                 }
             %>
@@ -45,3 +56,4 @@
 
 </body>
 </html>
+
