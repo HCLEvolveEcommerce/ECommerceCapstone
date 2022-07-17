@@ -17,11 +17,11 @@ public class UserDao {
     private PreparedStatement pst;
     private ResultSet rs;
 
-    private static final String INSERT_USERS_SQL = "INSERT INTO users" + " (name, email, password, usertype) VALUES " + " (?, ?, ?, ?);";
-    private static final String SELECT_USER_BY_ID = "select id, name,email,usertype, password from users where id=?";
+    private static final String INSERT_USERS_SQL = "INSERT INTO users" + " (firstname, email, password, usertype, address, city, zip, state, country, lastname, phonenumber) VALUES " + " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String SELECT_USER_BY_ID = "select id, firstname,email,usertype, password, address, city, zip, state, country, lastname, phonenumber from users where id=?";
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id=?";
-    private static final String UPDATE_USERS_SQL = "update users set name = ?, email=?, password=? , usertype=? where id=?";
+    private static final String UPDATE_USERS_SQL = "update users set firstname = ?, email=?, password=? , usertype=?, address=?, city=?, zip=?, state=?, country=?, lastname=?, phonenumber=? where id=?";
     private static final String QUERY_CHECK = "select * from users WHERE email = ?";
     private static final String LOGIN_CHECK = "select * from users WHERE email = ? AND password =? ";
     private static final String TYPE_CHECK = "select*from users WHERE usertype =?";
@@ -43,9 +43,16 @@ public class UserDao {
             if (rs.next()) {
                 user = new User();
                 user.setId(rs.getInt("id"));
-                user.setName(rs.getString("name"));
+                user.setFirstname(rs.getString("firstname"));
                 user.setEmail(rs.getString("email"));
                 user.setUsertype(rs.getString("usertype"));
+                user.setAddress(rs.getString("address"));
+                user.setCity(rs.getString("city"));
+                user.setZip(rs.getInt("zip"));
+                user.setState(rs.getString("state"));
+                user.setCountry(rs.getString("country"));
+                user.setLastname(rs.getString("lastname"));
+                user.setPhonenumber(rs.getString("phonenumber"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,10 +72,17 @@ public class UserDao {
             while (rs.next()) {
                 User row = new User();
                 row.setId(rs.getInt("id"));
-                row.setName(rs.getString("name"));
+                row.setFirstname(rs.getString("firstname"));
                 row.setEmail(rs.getString("email"));
                 row.setPassword(rs.getString("password"));
                 row.setUsertype(rs.getString("usertype"));
+                row.setAddress(rs.getString("address"));
+                row.setCity(rs.getString("city"));
+                row.setZip(rs.getInt("zip"));
+                row.setState(rs.getString("state"));
+                row.setCountry(rs.getString("country"));
+                row.setLastname(rs.getString("lastname"));
+                row.setPhonenumber(rs.getString("phonenumber"));
 
                 book.add(row);
             }
@@ -88,11 +102,18 @@ public class UserDao {
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-                String name = rs.getString("name");
+                String firstname = rs.getString("firstname");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
                 String usertype = rs.getString("usertype");
-                user = new User(id, name, email, password, usertype);
+                String address = rs.getString("address");
+                String city = rs.getString("city");
+                int zip = rs.getInt("zip");
+                String state = rs.getString("state");
+                String country = rs.getString("country");
+                String lastname = rs.getString("lastname");
+                String phonenumber = rs.getString("phonenumber");
+                user = new User(id, firstname, email, password, usertype, address, city, zip, state, country, lastname, phonenumber);
             }
         } catch (SQLException | ClassNotFoundException e){
             assert e instanceof SQLException;
@@ -117,10 +138,17 @@ public class UserDao {
         }
 
         try(PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(1, user.getFirstname());
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getPassword());
             preparedStatement.setString(4, user.getUsertype());
+            preparedStatement.setString(5, user.getAddress());
+            preparedStatement.setString(6, user.getCity());
+            preparedStatement.setInt(7, user.getZip());
+            preparedStatement.setString(8, user.getState());
+            preparedStatement.setString(9, user.getCountry());
+            preparedStatement.setString(10, user.getLastname());
+            preparedStatement.setString(11, user.getPhonenumber());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
 
@@ -143,11 +171,18 @@ public class UserDao {
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);){
             System.out.println("updated User: " + statement);
-            statement.setString(1, user.getName());
+            statement.setString(1, user.getFirstname());
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getPassword());
             statement.setString(4, user.getUsertype());
-            statement.setInt(5, user.getId());
+            statement.setString(5, user.getAddress());
+            statement.setString(6, user.getCity());
+            statement.setInt(7, user.getZip());
+            statement.setString(8, user.getState());
+            statement.setString(9, user.getCountry());
+            statement.setString(10, user.getLastname());
+            statement.setString(11, user.getPhonenumber());
+            statement.setInt(12, user.getId());
 
 
             rowUpdated = statement.executeUpdate() > 0;

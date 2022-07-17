@@ -11,13 +11,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.hcl.ecommerce.Model.DbCon.getConnection;
+
 public class OrderDao {
     private static final String INSERT_ORDERS_SQL = "INSERT INTO orders" + " (product_id, user_id, order_quantity, order_date) VALUES " + " (?, ?, ?, ?);";
     private static final String SELECT_ORDER_BY_ID = "select * from orders where id=?";
     private static final String SELECT_ALL_ORDERS = "select * from orders";
     private static final String SELECT_USER_ORDERS = "select * from orders where user_id=? order by orders.order_id desc";
     private static final String QUERY_CHECK = "select * from orders WHERE name = ?";
-    private static final String DELETE_ORDERS_SQL = "delete from orders where user_id=?";
+    private static final String DELETE_ORDERS_SQL = "delete from orders where order_id=?";
     private static final String SELECT_ORDERS_BY_ID = "select price from orders where id=?";
     private static final String UPDATE_ORDER_SQL = "update orders set name = ?, category=?, price=? , image=? where id=?";
 
@@ -77,6 +79,16 @@ public class OrderDao {
             System.out.println(e.getMessage());
         }
         return book;
+    }
+
+    public boolean deleteOrders(int id) throws SQLException, ClassNotFoundException {
+        boolean rowDeleted;
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(DELETE_ORDERS_SQL);){
+            statement.setInt(1, id);
+            rowDeleted = statement.executeUpdate() > 0;
+        }
+        return rowDeleted;
     }
 
     public List<Order> clientOrders(int id) {

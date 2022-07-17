@@ -1,4 +1,4 @@
-package com.hcl.ecommerce.Controller.User;
+package com.hcl.ecommerce.Controller.Order;
 
 import com.hcl.ecommerce.Dao.OrderDao;
 import com.hcl.ecommerce.Model.Cart;
@@ -20,7 +20,7 @@ public class OrderAllServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         try{
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
             Date date = new Date();
             ArrayList<Cart> cart_list = (ArrayList<Cart>)  request.getSession().getAttribute("cart-list");
             User auth = (User) session.getAttribute("auth");
@@ -34,6 +34,7 @@ public class OrderAllServlet extends HttpServlet {
                         order.setUserID(auth.getId());
                         order.setQuantity(c.getQuantity());
                         order.setOrderDate(formatter.format(date));
+                        order.setPrice(c.getPrice());
 
                         System.out.println("before dao");
                         OrderDao orderDao = new OrderDao(DbCon.getConnection());
@@ -41,8 +42,7 @@ public class OrderAllServlet extends HttpServlet {
                         System.out.println("end of for");
 
                     }
-                    session.setAttribute("orderId", order.getOrderID());
-                    session.setAttribute("orderPrice", order.getPrice());
+
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/order-email");
                     dispatcher.forward(request, response);
                     cart_list.clear();

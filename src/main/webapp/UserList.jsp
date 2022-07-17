@@ -50,7 +50,7 @@
 
         <!--Search User -->
         <nav class="navbar bg-light text-center">
-            <form action="select-user" class="container-fluid" method="get">
+            <form action="select-user" class="container-fluid" method="get"> <!-- pass whatever value you wanna search by then request.getparamater it (note for future self -->
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">@</span>
                     <input type="text" name="id" class="form-control" placeholder="email or id" value="search" aria-label="Username" aria-describedby="basic-addon1">
@@ -63,9 +63,16 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Last Name</th>
                 <th>Email</th>
                 <th>Password</th>
                 <th>User Type</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Zip</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Phone Number</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -74,10 +81,17 @@
             <tbody>
             <tr>
                 <td><%=u.getId()%></td>
-                <td><%=u.getName()%></td>
+                <td><%=u.getFirstname()%></td>
+                <td><%=u.getLastname()%></td>
                 <td><%=u.getEmail()%></td>
                 <td><%=u.getPassword()%></td>
                 <td><%=u.getUsertype()%></td>
+                <td><%=u.getAddress()%></td>
+                <td><%=u.getCity()%></td>
+                <td><%=u.getZip()%></td>
+                <td><%=u.getState()%></td>
+                <td><%=u.getCountry()%></td>
+                <td><%=u.getPhonenumber()%></td>
                 <td><a href="editU-form?id=<%=u.getId()%>">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete-user?id=<%=u.getId()%>">Delete</a></td>
             </tr>

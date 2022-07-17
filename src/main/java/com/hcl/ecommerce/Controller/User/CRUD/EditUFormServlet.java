@@ -17,29 +17,33 @@ public class EditUFormServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDao userDao = null;
         try {
+            System.out.println("yo?");
             User user = new User();
-            if(Objects.equals(user.getUsertype(), "Admin")) {
-                userDao = new UserDao(DbCon.getConnection());
-                int id = Integer.parseInt(request.getParameter("id"));
-                User existingUser = userDao.selectUser(id);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("UpdateUserForm.jsp"); //created later
-                request.setAttribute("user", existingUser);
-                dispatcher.forward(request, response);
-            }
+            if (user != null) {
+                request.getSession().setAttribute("auth", user);
+                    if (Objects.equals(user.getUsertype(), "Admin")) {
+                        System.out.println("yo??");
+                        userDao = new UserDao(DbCon.getConnection());
+                        int id = Integer.parseInt(request.getParameter("id"));
+                        User existingUser = userDao.selectUser(id);
+                        RequestDispatcher dispatcher = request.getRequestDispatcher("UpdateUserForm.jsp"); //created later
+                        request.setAttribute("user", existingUser);
+                        dispatcher.forward(request, response);
+                    } else {
+                        userDao = new UserDao(DbCon.getConnection());
+                        int id = Integer.parseInt(request.getParameter("id"));
+                        User existingUser = userDao.selectUser(id);
+                        System.out.println("yo????");
+                        RequestDispatcher dispatcher = request.getRequestDispatcher("ClientUpdateForm.jsp"); //created later
+                        request.setAttribute("user", existingUser);
+                        dispatcher.forward(request, response);
+                    }
+                }
 
-            else {
-                userDao = new UserDao(DbCon.getConnection());
-                int id = Integer.parseInt(request.getParameter("id"));
-                User existingUser = userDao.selectUser(id);
-                RequestDispatcher dispatcher = request.getRequestDispatcher("ClientUpdateForm.jsp"); //created later
-                request.setAttribute("user", existingUser);
-                dispatcher.forward(request, response);
+            } catch(ClassNotFoundException | SQLException e){
+                throw new RuntimeException(e);
             }
-
-        } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
         }
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

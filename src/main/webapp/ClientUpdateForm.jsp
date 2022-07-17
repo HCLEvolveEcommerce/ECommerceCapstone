@@ -53,27 +53,68 @@
           </c:if>
 
           <fieldset class="form-group">
-            <label>User Name</label> <input type="text"
-                                            value="<c:out value='${user.name}' />" class="form-control"
-                                            name="name" required="required">
+            <label>First Name</label> <input type="text"
+                                            value="<c:out value='${user.firstname}' />" class="form-control"
+                                            name="firstname" required="required">
           </fieldset>
 
           <fieldset class="form-group">
-            <label>User Email</label> <input type="email"
+            <label>Last Name</label> <input type="text" minlength="5"
+                                           value="<c:out value='${user.lastname}' />" class="form-control"
+                                           name="lastname" required="required">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Email</label> <input type="email"
                                              value="<c:out value='${user.email}' />" class="form-control"
                                              name="email" required="required">
           </fieldset>
 
           <fieldset class="form-group">
-            <label>Password</label> <input type="text" minlength="5"
-                                           value="<c:out value='${user.password}' />" class="form-control"
-                                           name="password" required="required">
+            <label>Password</label> <input type="password"
+                                             value="<c:out value='${user.password}' />" class="form-control"
+                                             name="password" required="required">
           </fieldset>
 
           <fieldset class="form-group">
-            <label></label><input type="text" minlength="5"
+            <label>Street Address</label> <input type="text"
+                                             value="<c:out value='${user.address}' />" class="form-control"
+                                             name="address" required="required">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>City</label> <input type="text"
+                                             value="<c:out value='${user.city}' />" class="form-control"
+                                             name="city" required="required">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Zip Code</label> <input type="number"
+                                             value="<c:out value='${user.zip}' />" class="form-control"
+                                             name="zip" required="required">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>State </label> <input type="text"
+                                             value="<c:out value='${user.state}' />" class="form-control"
+                                             name="state" required="required">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Country</label> <input type="text" minlength="5"
+                                           value="<c:out value='${user.country}' />" class="form-control"
+                                           name="country" required="required">
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Phone Number</label> <input type="text" minlength="5"
+                                           value="<c:out value='${user.phonenumber}' />" class="form-control"
+                                           name="phonenumber" required="required">
+          </fieldset>
+          <fieldset class="form-group">
+            <input type="text" minlength="5"
                                            value="Client"
-                                           name="usertype" required="required" aria-disabled="true" class="btn btn-secondary disabled">
+                                           name="usertype" required="required" aria-disabled="true" aria-hidden="true" class="btn btn-secondary disabled">
           </fieldset>
 
           <button type="submit" class="btn btn-success">Save</button>

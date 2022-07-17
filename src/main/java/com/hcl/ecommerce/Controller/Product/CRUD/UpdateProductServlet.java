@@ -1,4 +1,4 @@
-package com.hcl.ecommerce.Controller.Product;
+package com.hcl.ecommerce.Controller.Product.CRUD;
 
 import com.hcl.ecommerce.Dao.ProductDao;
 import com.hcl.ecommerce.Dao.UserDao;

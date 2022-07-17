@@ -1,4 +1,4 @@
-package com.hcl.ecommerce.Controller.User;
+package com.hcl.ecommerce.Controller.Order;
 
 import com.hcl.ecommerce.Dao.OrderDao;
 import com.hcl.ecommerce.Dao.UserDao;

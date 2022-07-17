@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         System.out.println(session.getId());
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try {
             String email = request.getParameter("login-email");
             String password = request.getParameter("login-password");
 
@@ -32,9 +32,16 @@ public class LoginServlet extends HttpServlet {
                 if(Objects.equals(user.getUsertype(), "Admin")) {
                     request.getSession().setAttribute("admin", user);
                     session.setAttribute("id", user.getId());
-                    session.setAttribute("name", user.getName());
+                    session.setAttribute("firstname", user.getFirstname());
                     session.setAttribute("email", user.getEmail());
                     session.setAttribute("usertype", user.getUsertype());
+                    session.setAttribute("address", user.getAddress());
+                    session.setAttribute("city", user.getCity());
+                    session.setAttribute("zip", user.getZip());
+                    session.setAttribute("state", user.getState());
+                    session.setAttribute("country", user.getCountry());
+                    session.setAttribute("lastname", user.getLastname());
+                    session.setAttribute("phonenumber", user.getPhonenumber());
 
                     response.sendRedirect("UserList.jsp");
                     System.out.println("Logged in as Admin");
@@ -43,9 +50,16 @@ public class LoginServlet extends HttpServlet {
 
                 else {
                     session.setAttribute("id", user.getId());
-                    session.setAttribute("name", user.getName());
+                    session.setAttribute("firstname", user.getFirstname());
                     session.setAttribute("email", user.getEmail());
                     session.setAttribute("usertype", user.getUsertype());
+                    session.setAttribute("address", user.getAddress());
+                    session.setAttribute("city", user.getCity());
+                    session.setAttribute("zip", user.getZip());
+                    session.setAttribute("state", user.getState());
+                    session.setAttribute("country", user.getCountry());
+                    session.setAttribute("lastname", user.getLastname());
+                    session.setAttribute("phonenumber", user.getPhonenumber());
                     response.sendRedirect("index.jsp");
                     System.out.println("Logged in as User");
                     System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));

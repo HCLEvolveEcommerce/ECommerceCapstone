@@ -102,7 +102,7 @@
         </span>
       </div>
       <figcaption class="info">
-        <h6 class="title"><%=auth.getName()%></h6>
+        <h6 class="title"><%=auth.getFirstname()%> <%=auth.getLastname()%></h6>
         <p>Email: <%=auth.getEmail()%>
           <a href="editU-form?id=<%=auth.getId()%>" class="px-2"><i class="fa fa-pen"></i></a>
         </p>
@@ -114,8 +114,8 @@
     <div class="row g-2 mb-3"> 
       <div class="col-md-6">
         <article class="box bg-light">
-          <b class="mx-2 text-muted"><i class="fa fa-map-marker-alt"></i></b> 
-          United States, 2401 Internet Blvd, Frisco, Texas <!--<=auth.getAddress()> -->
+          <b class="mx-2 text-muted"><i class="fa fa-map-marker-alt"></i></b>
+          <%=auth.getAddress()%>, <%=auth.getCity()%>, <%=auth.getState()%> <!--<=auth.getAddress()> -->
         </article>
       </div> <!-- col.// -->
     </div> <!-- row.// -->
@@ -138,8 +138,8 @@
           <span class="text-muted"><%=order.getOrderDate()%> </span>
         </div>
         <div>
-          <a href="#" class="btn btn-sm btn-outline-danger">Cancel order</a>
-          <a href="#" class="btn btn-sm btn-primary">Track order</a> 
+          <a href="remove-order?id=<%=order.getOrderID()%>" class="btn btn-sm btn-outline-danger">Cancel order</a>
+<%--          <a href="#" class="btn btn-sm btn-primary">Track order</a> --%>
         </div>
       </header>
       <hr>
@@ -147,12 +147,12 @@
         <div class="col-lg-4">
           <p class="mb-0 text-muted">Contact</p>
           <p class="m-0">
-            <%=auth.getName()%><br>  Phone: 371-295-9131 <br> <%=auth.getEmail()%> </p>
+            <%=auth.getFirstname()%><br>  Phone: <%=auth.getPhonenumber()%> <br> <%=auth.getEmail()%> </p>
         </div> <!-- col.// -->
         <div class="col-lg-4 border-start">
           <p class="mb-0 text-muted">Shipping address</p>
-          <p class="m-0"> United States <br> 
-            3601 Old Capitol Trail, Unit A-7, Suite 170777, Wilmington, DE 19808   </p>
+          <p class="m-0"><%=auth.getCountry()%> <br>
+            <%=auth.getAddress()%>, <%=auth.getCity()%>, <%=auth.getState()%> </p>
         </div> <!-- col.// -->
         <div class="col-lg-4 border-start">
           <p class="mb-0 text-muted">Payment</p>

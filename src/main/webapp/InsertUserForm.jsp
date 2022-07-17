@@ -44,9 +44,15 @@
         <input type="hidden" name="id" />
 
         <fieldset class="form-group">
-          <label>User Name</label> <input type="text"
+          <label>First Name</label> <input type="text"
                                           class="form-control"
-                                          name="name" required="required">
+                                          name="firstname" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Last Name</label> <input type="text" minlength="5"
+                                          class="form-control"
+                                          name="lastname" required="required">
         </fieldset>
 
         <fieldset class="form-group">
@@ -59,6 +65,42 @@
           <label>Password</label> <input type="text" minlength="5"
                                          class="form-control"
                                          name="password" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Address</label> <input type="text" minlength="5"
+                                         class="form-control"
+                                         name="address" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>City</label> <input type="text" minlength="5"
+                                         class="form-control"
+                                         name="city" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Zip</label> <input type="text" minlength="5"
+                                         class="form-control"
+                                         name="zip" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>State</label> <input type="text" minlength="5"
+                                         class="form-control"
+                                         name="state" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Country</label> <input type="text" minlength="5"
+                                         class="form-control"
+                                         name="country" required="required">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Phone Number</label> <input type="text" minlength="5"
+                                         class="form-control"
+                                         name="phonenumber" required="required">
         </fieldset>
 
         <fieldset class="form-group">

@@ -19,26 +19,47 @@ public class UpdateUserServlet extends HttpServlet {
         System.out.println("Am I touched");
         int id = Integer.parseInt(request.getParameter("id"));
         System.out.println("post parse");
-        String name = request.getParameter("name");
+        String firstname = request.getParameter("firstname");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String usertype = request.getParameter("usertype");
+        String address = request.getParameter("address");
+        String city = request.getParameter("city");
+        int zip = Integer.parseInt(request.getParameter("zip"));
+        String state = request.getParameter("state");
+        String country = request.getParameter("country");
+        String lastname = request.getParameter("lastname");
+        String phonenumber = request.getParameter("phonenumber");
         UserDao udao = null;
-        User user = new User(id, name, email, password, usertype);
+        User user = new User(id, firstname, email, password, usertype, address, city, zip, state, country, lastname, phonenumber);
         System.out.println("before try");
         try {
             udao = new UserDao(DbCon.getConnection());
             udao.updateUser(user);
             System.out.println("after try");
-        } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
-        }
         if(Objects.equals(user.getUsertype(), "Admin")) {
             System.out.println("after catch");
             response.sendRedirect("UserList.jsp");
         }
         else{
             response.sendRedirect("AccountPage.jsp");
+        }
+        } catch (ClassNotFoundException | SQLException e) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            throw new RuntimeException(e);
         }
     }
 
