@@ -19,7 +19,7 @@ public class SignupEmailServlet extends HttpServlet{
         // reads form fields
         String toAddress = request.getParameter("email");
         String header = "Welcome to Evolve";
-        String message = "Conratulations on creating your account. Here at Evolve Ecommerce Solutions we care about any inquiries you might have. Please feel free to reach me at dsikes313@gmail.com";
+        String message = "Congratulations on creating your account. Here at Evolve Ecommerce Solutions we care about any inquiries you might have. Please feel free to reach me at dsikes313@gmail.com";
 
 
         try {

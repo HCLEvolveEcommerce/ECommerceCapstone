@@ -35,14 +35,17 @@
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>42.3.4</version>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.29</version>
+      <scope>runtime</scope>
     </dependency>
 
 
-      <dependency>
+
+    <dependency>
         <groupId>com.sun.mail</groupId>
         <artifactId>jakarta.mail</artifactId>
         <version>1.6.4</version>
@@ -72,11 +75,11 @@
       <scope>compile</scope>
     </dependency>
 
-<!--    <dependency>-->
-<!--      <groupId>com.stripe</groupId>-->
-<!--      <artifactId>stripe-java</artifactId>-->
-<!--      <version>{VERSION}</version>  &lt;!&ndash;change this&ndash;&gt;-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>com.stripe</groupId>
+      <artifactId>stripe-java</artifactId>
+      <version>20.133.0</version>  <!--change this-->
+    </dependency>
 
 
   </dependencies>

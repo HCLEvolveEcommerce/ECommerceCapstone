@@ -46,7 +46,6 @@
 </section>
 
 
-
 <section class="bg-light padding-y">
     <div class="container">
 
@@ -64,7 +63,7 @@
                     </div>
                     <figcaption class="info">
                         <h6 class="title">Reasonable prices</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                        <p>We don't overcharge or upsell any products here at Evolve. We make our money from business to business relationships.</p>
                     </figcaption>
                 </figure> <!-- itemside // -->
             </div><!-- col // -->
@@ -77,7 +76,7 @@
                     </div>
                     <figcaption class="info">
                         <h6 class="title">Best quality</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                        <p>Evolve has worked hard so you dont have to. We have partnered with Tom Ford, Balenciaga, Prada and all the big hitters in luxury fashion.  </p>
                     </figcaption>
                 </figure> <!-- itemside // -->
             </div><!-- col // -->
@@ -90,7 +89,7 @@
                     </div>
                     <figcaption class="info">
                         <h6 class="title">Worldwide shipping</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                        <p>LWe ship to every nation, every state, and every territory at one flat rate price!  </p>
                     </figcaption>
                 </figure> <!-- itemside // -->
             </div> <!-- col // -->
@@ -103,7 +102,7 @@
                     </div>
                     <figcaption class="info">
                         <h6 class="title">Customer satisfaction</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                        <p>Julian Gaston - "I have been a customer of Evolve for a long time now. You just can't beat there customer service!" </p>
                     </figcaption>
                 </figure> <!-- itemside // -->
             </div><!-- col // -->
@@ -116,7 +115,7 @@
                     </div>
                     <figcaption class="info">
                         <h6 class="title">Happy customers</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                        <p>At Evolve we have good infrastructure. That Infrastructure starts with every happy employee. We pour an immense amount of time, effort and money to make your benefits worth it. </p>
                     </figcaption>
                 </figure> <!-- itemside // -->
             </div><!-- col // -->
@@ -129,7 +128,8 @@
                     </div>
                     <figcaption class="info">
                         <h6 class="title">Thousand items</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor </p>
+                        <p>We have the largest Ecommerce Product Selection for Luxury Fashion. Endless shopping, Endless Selection, Endless Fun! </p>
+
                     </figcaption>
                 </figure> <!-- itemside // -->
             </div> <!-- col // -->

@@ -62,7 +62,7 @@
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label>Price</label> <input type="number"
+                    <label>Price</label> <input type="text"
                                                    class="form-control"
                                                    name="price" required="required">
                 </fieldset>

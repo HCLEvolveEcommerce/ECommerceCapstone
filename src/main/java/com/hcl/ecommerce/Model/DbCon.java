@@ -7,10 +7,10 @@ import java.sql.SQLException;
 public class DbCon {
 
     private static Connection connection = null;
-    private static String jdbcURL = "jdbc:postgresql://localhost:5432/userdb";
-    private static String jdbcUserName = "postgres";
+    private static String jdbcURL = "jdbc:mysql://userdbazure.mysql.database.azure.com:3306/userdb";
+    private static String jdbcUserName = "dsikes313";
     private static String jdbcPassword = "Fbies#13188";
-    private static String jdbcDriver = "org.postgresql.Driver";
+    private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         try{ //this vs if allows us to keep trying the connection and not close it if connection == null

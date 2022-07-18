@@ -10,8 +10,6 @@ public class User {
     private String state;
     private String address;
     private String city;
-
-
     private String email;
     private String password;
 
@@ -21,28 +19,6 @@ public class User {
     public User(){
 
     }
-
-//    public User(int id, String firstname, String email, String password, String usertype) { //edit this
-//        this.id = id;
-//        this.firstname = firstname;
-//        this.email = email;
-//        this.password = password;
-//        this.usertype = usertype;
-//    }
-//
-//    public User(String firstname, String email, String password, String usertype) {
-//        this.firstname = firstname;
-//        this.email = email;
-//        this.password = password;
-//        this.usertype = usertype;
-//    }
-//
-//    public User(int id, String firstname, String usertype) {
-//        this.id = id;
-//        this.firstname =firstname;
-//        this.usertype = usertype;
-//    }
-
     public User(String firstname, String email, String password, String usertype, String address, String city, int zip, String state, String country, String lastname, String phonenumber) {
         this.firstname = firstname;
         this.email = email;

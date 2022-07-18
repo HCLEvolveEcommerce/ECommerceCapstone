@@ -163,6 +163,17 @@
               <%} else{%>
 
             </ul><a href="order-all"  class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a>
+            <a href="stripe-servlet"  class="btn btn-dark rounded-pill py-2 btn-block">
+              <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_51LMRusIS6vfGou9X2GkjPqT9ak1tsezEmOhJTfuxzPAHRIzsjkgWSk8ABVqoLqJ8mSrkZHxUoJSg60pijFIQZA0C00ylImPm5F"
+                    data-amount=${(total)};
+                    data-name="Evolve Ecommerce"
+                    data-description="Checkout"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="auto"
+                    data-currency="usd">
+            </script> </a>
                   <%}%>
           </div>
         </div>
