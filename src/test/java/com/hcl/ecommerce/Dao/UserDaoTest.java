@@ -1,7 +1,6 @@
 package com.hcl.ecommerce.Dao;
 
 import com.hcl.ecommerce.Model.User;
-import jdk.jfr.Name;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
@@ -44,7 +43,6 @@ class UserDaoTest extends TestCase {
     }
     //Test for valid user login.
     @Test
-    @Name("Valid User Login")
     void userLogin() {
         User user = userDao.userLogin("dsikes313@gmail.com", "BeastMode");
         Assertions.assertNotNull(user, "This user should not be null");
@@ -52,7 +50,7 @@ class UserDaoTest extends TestCase {
         Assertions.assertEquals(2, user.getId());
 
     }
-
+    //Get all users test
     @Test
     void getAllUsers() {
     }
