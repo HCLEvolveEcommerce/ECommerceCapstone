@@ -1,7 +1,6 @@
 package com.hcl.ecommerce.Dao;
 
 import com.hcl.ecommerce.Model.User;
-import jdk.jfr.Name;
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
