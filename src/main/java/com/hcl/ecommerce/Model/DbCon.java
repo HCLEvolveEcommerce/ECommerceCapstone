@@ -11,6 +11,7 @@ public class DbCon {
     private static String jdbcUserName = "dsikes313";
     private static String jdbcPassword = "Fbies#13188";
     private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";
+    //Yerrrp its esteban
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         try{ //this vs if allows us to keep trying the connection and not close it if connection == null
