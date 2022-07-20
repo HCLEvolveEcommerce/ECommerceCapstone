@@ -43,7 +43,6 @@ class UserDaoTest extends TestCase {
     }
     //Test for valid user login.
     @Test
-    @Name("Valid User Login")
     void userLogin() {
         User user = userDao.userLogin("dsikes313@gmail.com", "BeastMode");
         Assertions.assertNotNull(user, "This user should not be null");
