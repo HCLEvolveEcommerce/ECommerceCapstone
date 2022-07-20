@@ -15,6 +15,7 @@
     request.setAttribute("admin", admin);
   }
   //pp
+  //pp pt2
 
   DecimalFormat format = new DecimalFormat("$#0.00"); //used for formatting
   ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
