@@ -180,76 +180,7 @@
     </div> <!-- card-body .// -->
     </article>
   <%}%>
-  <%}%><!-- card .// -->
-    <!--  ======== item order .// ======== -->
-
-    <!--  ======== item order ======== -->
-<%--    <article class="card border-primary">--%>
-<%--    <div class="card-body">--%>
-<%--      <header class="d-lg-flex">--%>
-<%--        <div class="flex-grow-1">--%>
-<%--          <h6 class="mb-0">Order ID: 9088 --%>
-<%--            <i class="dot"></i>  --%>
-<%--            <span class="text-danger"> Pending </span>--%>
-<%--          </h6>--%>
-<%--          <span class="text-muted">Date: 16 December 2018</span> --%>
-<%--        </div>--%>
-<%--        <div>--%>
-<%--          <a href="#" class="btn btn-sm btn-outline-danger">Cancel order</a>--%>
-<%--          <a href="#" class="btn btn-sm btn-primary">Track order</a> --%>
-<%--        </div>--%>
-<%--      </header>--%>
-<%--      <hr>--%>
-<%--      <div class="row">--%>
-<%--        <div class="col-lg-4">--%>
-<%--          <p class="mb-0 text-muted">Contact</p>--%>
-<%--          <p class="m-0"> --%>
-<%--            Mike Johnatan <br>  Phone: 371-295-9131 <br> Email: info@mywebsite.com </p>--%>
-<%--        </div> <!-- col.// -->--%>
-<%--        <div class="col-lg-4 border-start">--%>
-<%--          <p class="mb-0 text-muted">Shipping address</p>--%>
-<%--          <p class="m-0"> United States <br> --%>
-<%--            600 Markley Street, Suite 170777 Port Reading, NJ 07064</p>--%>
-<%--        </div> <!-- col.// -->--%>
-<%--        <div class="col-lg-4 border-start">--%>
-<%--          <p class="mb-0 text-muted">Payment</p>--%>
-<%--          <p class="m-0">--%>
-<%--            <span class="text-success"> Visa  **** 4216   </span> <br> --%>
-<%--            Shipping fee:  $56 <br> --%>
-<%--            Total paid:  $456 --%>
-<%--          </p>--%>
-<%--        </div> <!-- col.// -->--%>
-<%--      </div> <!-- row.// -->--%>
-<%--      <hr>--%>
-<%--      <ul class="row">--%>
-<%--        <li class="col-xl-4  col-lg-6">--%>
-<%--          <figure class="itemside mb-3">--%>
-<%--            <div class="aside">--%>
-<%--              <img width="72" height="72" src="images/items/10.jpg" class="img-sm rounded border">--%>
-<%--            </div>--%>
-<%--            <figcaption class="info">--%>
-<%--              <p class="title">T-shirts with multiple colors</p>--%>
-<%--              <strong> 2x = $339.90 </strong>--%>
-<%--            </figcaption>--%>
-<%--          </figure> --%>
-<%--        </li>--%>
-<%--        <li class="col-xl-4 col-lg-6">--%>
-<%--          <figure class="itemside mb-3">--%>
-<%--            <div class="aside">--%>
-<%--              <img width="72" height="72" src="images/items/11.jpg" class="img-sm rounded border">--%>
-<%--            </div>--%>
-<%--            <figcaption class="info">--%>
-<%--              <p class="title">Gaming Headset 32db Black</p>--%>
-<%--              <strong> 2x = $339.90 </strong>--%>
-<%--            </figcaption>--%>
-<%--          </figure>--%>
-<%--        </li>--%>
-<%--      </ul>--%>
-<%--    </div> <!-- card-body .// -->--%>
-<%--    </article> <!-- card .// --> --%>
-    <!--  ======== item order ======== .// -->
-
-
+  <%}%>
 
     </div> <!-- card-body .// -->
     </article> <!-- card .// --> 
