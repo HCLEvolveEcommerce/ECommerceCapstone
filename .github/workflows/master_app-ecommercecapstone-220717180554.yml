@@ -8,18 +8,17 @@ on:
     branches:
       - master
   workflow_dispatch:
-
+  
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
-          java-version: '8.0.0_322'
+          java-version: '8'
 
       - name: Build with Maven
         run: mvn clean install
@@ -49,5 +48,5 @@ jobs:
         with:
           app-name: 'app-ECommerceCapstone-220717180554'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5379114B99D54855BD80C0C3D1357D5F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_06B3A185767C4A65A5F27365387EE772 }}
           package: '*.war'
