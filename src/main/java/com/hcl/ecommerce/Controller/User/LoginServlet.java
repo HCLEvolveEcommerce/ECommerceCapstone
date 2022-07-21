@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
                     System.out.println("Logged in as Admin");
                     System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
                 }
-
+                
                 else {
                     session.setAttribute("id", user.getId());
                     session.setAttribute("firstname", user.getFirstname());

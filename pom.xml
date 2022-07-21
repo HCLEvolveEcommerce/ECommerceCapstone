@@ -15,8 +15,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <okta.sdk.version>8.2.1</okta.sdk.version>
-    <okta.auth.version>2.0.7</okta.auth.version>
   </properties>
 
   <dependencies>
@@ -36,26 +34,6 @@
       <scope>provided</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.okta.authn.sdk</groupId>
-      <artifactId>okta-authn-sdk-api</artifactId>
-      <version>${okta.auth.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.okta.authn.sdk</groupId>
-      <artifactId>okta-authn-sdk-impl</artifactId>
-      <version>${okta.auth.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.okta.sdk</groupId>
-      <artifactId>okta-sdk-httpclient</artifactId>
-      <version>${okta.sdk.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
@@ -68,10 +46,10 @@
 
 
     <dependency>
-        <groupId>com.sun.mail</groupId>
-        <artifactId>jakarta.mail</artifactId>
-        <version>1.6.4</version>
-      </dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>jakarta.mail</artifactId>
+      <version>1.6.4</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-email</artifactId>
