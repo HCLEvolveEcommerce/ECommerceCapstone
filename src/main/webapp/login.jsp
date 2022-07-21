@@ -23,12 +23,12 @@
 <head>
     <title>Client Login</title>
     <%@include file="includes/header.jsp"%>
-    <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/js/okta-sign-in.min.js" type="text/javascript"></script>
-    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
+    <script src="https://global.oktacdn.com/okta-signin-widget/6.5.0/js/okta-sign-in.min.js" type="text/javascript"></script>
+    <link href="https://global.oktacdn.com/okta-signin-widget/6.5.0/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
     <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-theme.css" type="text/css" rel="stylesheet"/><!--BoostStrap CSS CDN -->
 </head>
 <%@include file="includes/navbar.jsp"%>
-<body style="background-repeat: no-repeat; background-image:url(product-image/mountain.png)">
+<body>
 
 <%--<form action="user-login" method="post" class="vh-100 gradient-custom">--%>
 <%--    <div class="container py-5 h-100">--%>
@@ -73,48 +73,37 @@
 <div id="okta-login-container"></div>
 
 <script type="text/javascript">
-    var oktaSignIn = new OktaSignIn({
-        baseUrl: "http://localhost:8080/ECommerceCapstone_war/",
-        clientId: "0oa5vckhoeXudIB555d7",
+    const oktaSignIn = new OktaSignIn({
+        baseUrl: "https://dev-4182665.okta.com",
+        redirectUri: '{{https://dev-4182665.okta.com configured in your OIDC app}}',
+        clientId: "dev-4182665.okta.com",
         authParams: {
-            issuer: "default",
-            responseType: ['token', 'id_token'],
-            display: 'page'
+            issuer: "https://dev-4182665.okta.com/oauth2/default"
         }
     });
 
-    if (oktaSignIn.token.hasTokensInUrl()) {
-        oktaSignIn.token.parseTokensFromUrl(
-            // If we get here, the user just logged in.
-            function success(res) {
-                var accessToken = res[0];
-                var idToken = res[1];
+    oktaSignIn.authClient.token.getUserInfo().then(function(user) {
+        document.getElementById("messageBox").innerHTML = "Hello, " + user.email + "! You are *still* logged in! :)";
+        document.getElementById("logout").style.display = 'block';
+    }, function(error) {
+        oktaSignIn.showSignInToGetTokens({
+            el: '#okta-login-container'
+        }).then(function(tokens) {
+            oktaSignIn.authClient.tokenManager.setTokens(tokens);
+            oktaSignIn.remove();
 
-                oktaSignIn.tokenManager.add('accessToken', accessToken);
-                oktaSignIn.tokenManager.add('idToken', idToken);
+            const idToken = tokens.idToken;
+            document.getElementById("messageBox").innerHTML = "Hello, " + idToken.claims.email + "! You just logged in! :)";
+            document.getElementById("logout").style.display = 'block';
 
-                window.location.hash='';
-                document.getElementById("messageBox").innerHTML = "Hello, " + idToken.claims.email + "! You just logged in! :)";
-            },
-            function error(err) {
-                console.error(err);
-            }
-        );
-    } else {
-        oktaSignIn.session.get(function (res) {
-            // If we get here, the user is already signed in.
-            if (res.status === 'ACTIVE') {
-                document.getElementById("messageBox").innerHTML = "Hello, " + res.login + "! You are *still* logged in! :)";
-                return;
-            }
-            oktaSignIn.renderEl(
-                { el: '#okta-login-container' },
-                function success(res) {},
-                function error(err) {
-                    console.error(err);
-                }
-            );
+        }).catch(function(err) {
+            console.error(err);
         });
+    });
+
+    function logout() {
+        oktaSignIn.authClient.signOut();
+        location.reload();
     }
 </script>
 <%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
