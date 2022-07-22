@@ -12,6 +12,7 @@ public class DbCon {
     private static String jdbcPassword = "Fbies#13188";
     private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";
 
+
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         try{ //this vs if allows us to keep trying the connection and not close it if connection == null
             Class.forName(jdbcDriver);
@@ -23,3 +24,5 @@ public class DbCon {
         return connection;
     }
 }
+
+// ECF-7 testing

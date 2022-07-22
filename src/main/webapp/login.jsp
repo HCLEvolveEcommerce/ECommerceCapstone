@@ -22,7 +22,10 @@
 <html>
 <head>
     <title>Client Login</title>
-    <%@include file="includes/header.jsp"%>  <!--BoostStrap CSS CDN -->
+    <%@include file="includes/header.jsp"%>
+    <script src="https://global.oktacdn.com/okta-signin-widget/6.5.0/js/okta-sign-in.min.js" type="text/javascript"></script>
+    <link href="https://global.oktacdn.com/okta-signin-widget/6.5.0/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
+    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.16.0/css/okta-theme.css" type="text/css" rel="stylesheet"/><!--BoostStrap CSS CDN -->
 </head>
 <%@include file="includes/navbar.jsp"%>
 <body style="background-repeat: no-repeat; background-image:url(product-image/mountain.png)">
@@ -66,7 +69,43 @@
     </div>
 </form>
 
+<%--<!-- where the sign-in form will be displayed -->--%>
+<%--<div id="okta-login-container"></div>--%>
 
+<%--<script type="text/javascript">--%>
+<%--    const oktaSignIn = new OktaSignIn({--%>
+<%--        baseUrl: "https://dev-4182665.okta.com",--%>
+<%--        redirectUri: '{{https://dev-4182665.okta.com configured in your OIDC app}}',--%>
+<%--        clientId: "dev-4182665.okta.com",--%>
+<%--        authParams: {--%>
+<%--            issuer: "https://dev-4182665.okta.com/oauth2/default"--%>
+<%--        }--%>
+<%--    });--%>
+
+<%--    oktaSignIn.authClient.token.getUserInfo().then(function(user) {--%>
+<%--        document.getElementById("messageBox").innerHTML = "Hello, " + user.email + "! You are *still* logged in! :)";--%>
+<%--        document.getElementById("logout").style.display = 'block';--%>
+<%--    }, function(error) {--%>
+<%--        oktaSignIn.showSignInToGetTokens({--%>
+<%--            el: '#okta-login-container'--%>
+<%--        }).then(function(tokens) {--%>
+<%--            oktaSignIn.authClient.tokenManager.setTokens(tokens);--%>
+<%--            oktaSignIn.remove();--%>
+
+<%--            const idToken = tokens.idToken;--%>
+<%--            document.getElementById("messageBox").innerHTML = "Hello, " + idToken.claims.email + "! You just logged in! :)";--%>
+<%--            document.getElementById("logout").style.display = 'block';--%>
+
+<%--        }).catch(function(err) {--%>
+<%--            console.error(err);--%>
+<%--        });--%>
+<%--    });--%>
+
+<%--    function logout() {--%>
+<%--        oktaSignIn.authClient.signOut();--%>
+<%--        location.reload();--%>
+<%--    }--%>
+<%--</script>--%>
 <%@include file="includes/BootScript.jsp"%> <!--BoostStrap JS CDN -->
 </body>
 </html>

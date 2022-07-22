@@ -8,7 +8,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Objects;
 
@@ -47,7 +46,7 @@ public class LoginServlet extends HttpServlet {
                     System.out.println("Logged in as Admin");
                     System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
                 }
-
+                
                 else {
                     session.setAttribute("id", user.getId());
                     session.setAttribute("firstname", user.getFirstname());
@@ -63,6 +62,7 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("index.jsp");
                     System.out.println("Logged in as User");
                     System.out.println(session.getAttribute("email") + " " + session.getAttribute("usertype"));
+
                 }
             } else {
                 response.sendRedirect("login.jsp");
