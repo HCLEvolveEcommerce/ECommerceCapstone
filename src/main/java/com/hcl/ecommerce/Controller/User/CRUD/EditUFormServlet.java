@@ -13,12 +13,20 @@ import java.util.Objects;
 
 @WebServlet(name = "ShowEditUserForm", value = "/editU-form")
 public class EditUFormServlet extends HttpServlet {
+    private UserDao userDao;
+    private User user;
+    public EditUFormServlet(UserDao uDao, User user) {
+        userDao = uDao;
+        this.user = user;
+    }
+    public EditUFormServlet() {
+        user = new User();
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDao userDao = null;
         try {
             System.out.println("yo?");
-            User user = new User();
             if (user != null) {
                 request.getSession().setAttribute("auth", user);
                     if (Objects.equals(user.getUsertype(), "Admin")) {
