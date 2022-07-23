@@ -3,10 +3,6 @@
 
 name: Build and deploy WAR app to Azure Web App - app-ECommerceCapstone-220717180554
 
-- name: Badge Action
-  uses: emibcn/badge-action@v1.2.4
-
-
 on:
   push:
     branches:
