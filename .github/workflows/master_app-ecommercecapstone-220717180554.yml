@@ -3,6 +3,10 @@
 
 name: Build and deploy WAR app to Azure Web App - app-ECommerceCapstone-220717180554
 
+- name: Badge Action
+  uses: emibcn/badge-action@v1.2.4
+
+
 on:
   push:
     branches:
@@ -50,3 +54,7 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_06B3A185767C4A65A5F27365387EE772 }}
           package: '*.war'
+          
+          
+
+
