@@ -3,6 +3,7 @@ package com.hcl.ecommerce.Controller.User.CRUD;
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.User;
 import junit.framework.TestCase;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -28,13 +29,21 @@ class EditUFormServletTest extends TestCase {
     UserDao userDao;
     @Mock
     User user;
-    final int USER_ID = 324234;
+    @Mock
+    HttpServletRequest  request;
+    @Mock
+    HttpServletResponse response;
+    @Mock
+    RequestDispatcher dispatcher;
+    @Mock
+    HttpSession session;
     @BeforeEach
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-
-
-
+        request = mock(HttpServletRequest.class);
+        response = mock(HttpServletResponse.class);
+        dispatcher = mock(RequestDispatcher.class);
+        session = mock(HttpSession.class);
         userDao = mock(UserDao.class);
 
     }
@@ -42,14 +51,11 @@ class EditUFormServletTest extends TestCase {
     private final static String path = "UpdateUserForm.jsp";
     @Test
     void testEditUFormReturnPathAdmin() throws ServletException, IOException {
-        HttpServletRequest  request = mock(HttpServletRequest.class);
-        HttpServletResponse response = mock(HttpServletResponse.class);
-        RequestDispatcher dispatcher = mock(RequestDispatcher.class);
-        HttpSession session = mock(HttpSession.class);
+
 
         when(user.getUsertype()).thenReturn("Admin");
         when(request.getSession()).thenReturn(session);
-        when(request.getParameter("id")).thenReturn("8");
+        when(request.getParameter("id")).thenReturn("186");
         when(request.getRequestDispatcher(path)).thenReturn(dispatcher);
 
 
@@ -57,6 +63,6 @@ class EditUFormServletTest extends TestCase {
         editUFormServlet.doGet(request, response);
 
         verify(request, atLeast(1)).getParameter("id");
-
-    }
+        assertNotNull(editUFormServlet.existingUser);
+     }
 }

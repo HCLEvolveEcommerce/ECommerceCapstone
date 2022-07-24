@@ -21,10 +21,6 @@ class UserDaoTest extends TestCase {
         userDao = new UserDao(DbCon.getConnection());
     }
 
-    @Before
-    public void create() throws SQLException, ClassNotFoundException {
-        userDao = new UserDao(DbCon.getConnection());
-    }
 
     @BeforeEach
     public void setUp() {
@@ -53,8 +49,8 @@ class UserDaoTest extends TestCase {
     //Get all users test
     @Test
     void getAllUsers() {
-    }
 
+    }
     @Test
     void selectUser() {
     }
@@ -64,10 +60,18 @@ class UserDaoTest extends TestCase {
     }
 
     @Test
-    void deleteUser() {
+    void TestUInsertAndDelete() throws SQLException, ClassNotFoundException {
+
+        userDao.insertUser(new User("Julina","julina@yahoo.com", "julina123", "Admin", "1824 Auburn Dr.", "Carrollton", 75007, "tx", "usa","John", "42932123"));
+        //need to update to newest id
+        User dummyUser = userDao.selectUser(189);
+        assertEquals("Julina", dummyUser.getFirstname());
+        assert(userDao.deleteUser(189));
+        assertFalse(userDao.deleteUser(12321));
     }
 
     @Test
     void updateUser() {
     }
+
 }
