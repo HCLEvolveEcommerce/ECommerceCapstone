@@ -8,7 +8,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.net.UnknownServiceException;
 import java.sql.SQLException;
 
 @WebServlet(name = "SignUpServlet", value = "/signup-user")
@@ -41,6 +40,12 @@ public class SignUpServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException
+    {
+        super.init(config);
     }
 }
 

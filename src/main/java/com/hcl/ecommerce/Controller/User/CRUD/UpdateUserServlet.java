@@ -37,6 +37,8 @@ public class UpdateUserServlet extends HttpServlet {
             udao = new UserDao(DbCon.getConnection());
             udao.updateUser(user);
             System.out.println("after try");
+            System.out.println(user.getUsertype());
+            System.out.println(user.getFirstname());
         if(Objects.equals(user.getUsertype(), "Admin")) {
             System.out.println("after catch");
             response.sendRedirect("UserList.jsp");

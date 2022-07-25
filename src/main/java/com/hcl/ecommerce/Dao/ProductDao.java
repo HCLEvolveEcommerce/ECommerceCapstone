@@ -24,7 +24,7 @@ public class ProductDao {
     private static final String SELECT_PRICE_BY_ID = "select price from products where id=?";
     private static final String UPDATE_PRODUCT_SQL = "update products set name = ?, category=?, price=? , image=? where id=?";
     private static final String TYPE_CHECK = "select*from products WHERE productav =?";
-
+    private static final String SELECT_PRODUCT_BY_NAME = "select * from products where name = ?";
 
     private Connection con;
 
@@ -129,7 +129,28 @@ public class ProductDao {
 
         return row;
     }
+    public Product getProductByName(String name) {
+        Product row = null;
+        try {
+            query = SELECT_PRODUCT_BY_NAME;
+            pst = this.con.prepareStatement(query);
+            pst.setString(1, name);
+            ResultSet rs = pst.executeQuery();
 
+            while (rs.next()) {
+                row = new Product();
+                row.setId(rs.getInt("id"));
+                row.setName(rs.getString("name"));
+                row.setCategory(rs.getString("category"));
+                row.setPrice(rs.getDouble("price"));
+                row.setImage(rs.getString("image"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return row;
+    }
     public void insertProduct(Product product) throws SQLException, ClassNotFoundException { //untested
                 try {
                     query = INSERT_PRODUCTS_SQL;
