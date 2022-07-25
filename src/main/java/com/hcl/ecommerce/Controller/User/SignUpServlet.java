@@ -5,9 +5,13 @@ import com.hcl.ecommerce.Model.DbCon;
 import com.hcl.ecommerce.Model.User;
 
 import javax.jws.soap.SOAPBinding;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.net.UnknownServiceException;
 import java.sql.SQLException;
@@ -42,6 +46,12 @@ public class SignUpServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException
+    {
+        super.init(config);
     }
 }
 
