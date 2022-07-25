@@ -1,22 +1,19 @@
 package com.hcl.ecommerce.Controller.Order;
 
 import com.hcl.ecommerce.Dao.OrderDao;
-import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
 import com.hcl.ecommerce.Model.Order;
 import com.hcl.ecommerce.Model.User;
 
-import javax.jws.soap.SOAPBinding;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import javax.swing.text.DateFormatter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
 
 @WebServlet(name = "UserOrderServlet", value = "/user-order")
 public class OrderServlet extends HttpServlet {
