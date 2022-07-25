@@ -4,7 +4,6 @@ import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
 import com.hcl.ecommerce.Model.User;
 
-import javax.jws.soap.SOAPBinding;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
