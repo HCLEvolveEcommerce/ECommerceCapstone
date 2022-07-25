@@ -52,7 +52,7 @@ class DeleteProductServletTest extends TestCase {
 
 
         when(request.getSession()).thenReturn(session);
-        when(request.getParameter("id")).thenReturn("8");
+        when(request.getParameter("id")).thenReturn("1234");
         RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 
         deleteProductServlet = new DeleteProductServlet();

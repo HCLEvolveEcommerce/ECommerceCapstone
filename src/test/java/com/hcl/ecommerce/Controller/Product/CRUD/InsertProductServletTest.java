@@ -63,6 +63,13 @@ class InsertProductServletTest extends TestCase {
 
         insertProductServlet.doGet(request, response);
         verify(response,atLeast(1)).sendRedirect(path);
+        deleteProduct("John");
+    }
+
+    public void deleteProduct(String name) throws SQLException, ClassNotFoundException {
+        ProductDao pDao = new ProductDao(DbCon.getConnection());
+        Product product = pDao.getProductByName(name);
+        pDao.deleteProducts(product.getId());
     }
 
 }
