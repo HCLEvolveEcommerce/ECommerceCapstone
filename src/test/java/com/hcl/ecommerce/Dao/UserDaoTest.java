@@ -62,11 +62,12 @@ class UserDaoTest extends TestCase {
     @Test
     void TestUInsertAndDelete() throws SQLException, ClassNotFoundException {
 
-        userDao.insertUser(new User("Julina","julina@yahoo.com", "julina123", "Admin", "1824 Auburn Dr.", "Carrollton", 75007, "tx", "usa","John", "42932123"));
+        userDao.insertUser(new User("John","johnsmith@yahoo.com", "johnsmith", "Client", "1824 Auburn Dr.", "Carrollton", 75007, "tx", "usa","Smith", "42932123"));
         //need to update to newest id
-        User dummyUser = userDao.selectUser(189);
-        assertEquals("Julina", dummyUser.getFirstname());
-        assert(userDao.deleteUser(189));
+        User dummyUser = userDao.userLogin("johnsmith@yahoo.com","johnsmith");
+        assertEquals("John", dummyUser.getFirstname());
+        assertEquals("John", dummyUser.getFirstname());
+        assert(userDao.deleteUser(dummyUser.getId()));
         assertFalse(userDao.deleteUser(12321));
     }
 

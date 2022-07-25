@@ -46,23 +46,36 @@ class EditUFormServletTest extends TestCase {
         session = mock(HttpSession.class);
         userDao = mock(UserDao.class);
 
+        when(request.getSession()).thenReturn(session);
+        when(request.getParameter("id")).thenReturn("185");
     }
 
-    private final static String path = "UpdateUserForm.jsp";
     @Test
     void testEditUFormReturnPathAdmin() throws ServletException, IOException {
 
 
         when(user.getUsertype()).thenReturn("Admin");
-        when(request.getSession()).thenReturn(session);
-        when(request.getParameter("id")).thenReturn("186");
-        when(request.getRequestDispatcher(path)).thenReturn(dispatcher);
-
+        when(request.getRequestDispatcher("UpdateUserForm.jsp")).thenReturn(dispatcher);
 
         editUFormServlet = new EditUFormServlet(userDao, user);
         editUFormServlet.doGet(request, response);
 
         verify(request, atLeast(1)).getParameter("id");
-        assertNotNull(editUFormServlet.existingUser);
+        verify(request, atLeast(1)).getRequestDispatcher("UpdateUserForm.jsp");
+
      }
+
+    @Test
+    void testEditUFormReturnPathClient() throws ServletException, IOException {
+
+
+        when(user.getUsertype()).thenReturn("Client");
+        when(request.getRequestDispatcher("ClientUpdateForm.jsp")).thenReturn(dispatcher);
+
+        editUFormServlet = new EditUFormServlet(userDao, user);
+        editUFormServlet.doGet(request, response);
+
+        verify(request, atLeast(1)).getParameter("id");
+        verify(request, atLeast(1)).getRequestDispatcher("ClientUpdateForm.jsp");
+    }
 }
