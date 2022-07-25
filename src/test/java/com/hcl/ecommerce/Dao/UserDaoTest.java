@@ -53,10 +53,13 @@ class UserDaoTest extends TestCase {
     }
     @Test
     void selectUser() {
+        User user = userDao.selectUser(2);
+        assertEquals("Julian ", user.getFirstname());
     }
 
     @Test
     void insertUser() {
+
     }
 
     @Test
