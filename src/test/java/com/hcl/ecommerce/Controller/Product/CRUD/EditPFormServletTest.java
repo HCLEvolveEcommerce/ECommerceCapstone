@@ -1,9 +1,6 @@
 package com.hcl.ecommerce.Controller.Product.CRUD;
 
-import com.hcl.ecommerce.Controller.User.CRUD.EditUFormServlet;
 import com.hcl.ecommerce.Dao.ProductDao;
-import com.hcl.ecommerce.Model.Product;
-import com.hcl.ecommerce.Model.User;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

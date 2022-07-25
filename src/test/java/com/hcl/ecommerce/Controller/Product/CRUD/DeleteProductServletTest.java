@@ -1,6 +1,5 @@
 package com.hcl.ecommerce.Controller.Product.CRUD;
 
-import com.hcl.ecommerce.Controller.User.CRUD.DeleteUserServlet;
 import com.hcl.ecommerce.Dao.ProductDao;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,6 +1,5 @@
 package com.hcl.ecommerce.Controller.Product.CRUD;
 
-import com.hcl.ecommerce.Controller.Product.CRUD.UpdateProductServlet;
 import com.hcl.ecommerce.Dao.ProductDao;
 import com.hcl.ecommerce.Model.Product;
 import junit.framework.TestCase;

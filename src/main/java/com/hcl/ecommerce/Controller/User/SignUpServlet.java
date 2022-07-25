@@ -4,17 +4,10 @@ import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.DbCon;
 import com.hcl.ecommerce.Model.User;
 
-
-import javax.jws.soap.SOAPBinding;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-import javax.sql.DataSource;
 import java.io.IOException;
-import java.net.UnknownServiceException;
 import java.sql.SQLException;
 
 @WebServlet(name = "SignUpServlet", value = "/signup-user")

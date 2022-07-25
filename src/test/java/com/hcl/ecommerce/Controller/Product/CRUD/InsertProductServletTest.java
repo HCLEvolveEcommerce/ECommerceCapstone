@@ -1,7 +1,5 @@
 package com.hcl.ecommerce.Controller.Product.CRUD;
 
-import com.hcl.ecommerce.Controller.Product.CRUD.DeleteProductServlet;
-import com.hcl.ecommerce.Controller.Product.CRUD.InsertProductServlet;
 import com.hcl.ecommerce.Dao.ProductDao;
 import com.hcl.ecommerce.Model.DbCon;
 import com.hcl.ecommerce.Model.Product;

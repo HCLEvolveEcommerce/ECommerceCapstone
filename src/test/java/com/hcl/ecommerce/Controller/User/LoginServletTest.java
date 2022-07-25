@@ -1,6 +1,5 @@
 package com.hcl.ecommerce.Controller.User;
 
-import com.hcl.ecommerce.Controller.User.CRUD.EditUFormServlet;
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.User;
 import junit.framework.TestCase;
