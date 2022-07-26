@@ -69,7 +69,6 @@ class UserDaoTest extends TestCase {
         //need to update to newest id
         User dummyUser = userDao.userLogin("johnsmith@yahoo.com","johnsmith");
         assertEquals("John", dummyUser.getFirstname());
-        assertEquals("John", dummyUser.getFirstname());
         assert(userDao.deleteUser(dummyUser.getId()));
         assertFalse(userDao.deleteUser(12321));
     }

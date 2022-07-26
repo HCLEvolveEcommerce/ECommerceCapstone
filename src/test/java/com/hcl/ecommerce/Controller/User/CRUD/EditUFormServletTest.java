@@ -51,7 +51,6 @@ class EditUFormServletTest extends TestCase {
     @Test
     void testEditUFormReturnPathAdmin() throws ServletException, IOException {
 
-
         when(user.getUsertype()).thenReturn("Admin");
         when(request.getRequestDispatcher("UpdateUserForm.jsp")).thenReturn(dispatcher);
 

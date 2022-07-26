@@ -22,7 +22,7 @@ public class OrderDao {
     private static final String DELETE_ORDERS_SQL = "delete from orders where order_id=?";
     private static final String SELECT_ORDERS_BY_ID = "select price from orders where id=?";
     private static final String UPDATE_ORDER_SQL = "update orders set name = ?, category=?, price=? , image=? where id=?";
-
+    private static final String SELECT_ORDER_BY_ORDERDATE = "select * from orders where order_date = ?";
 
     private Connection connection;
     private String query;
@@ -121,5 +121,30 @@ public class OrderDao {
             System.out.println(e.getMessage());
         }
         return book;
+    }
+
+    public Order getOrderByOrderDate(String orderDate) {
+        Order order = new Order();
+        try {
+
+            query = SELECT_ORDER_BY_ORDERDATE;
+            preparedStatement = this.connection.prepareStatement(query);
+            preparedStatement.setString(1,orderDate);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Order row = new Order();
+                order.setOrderID(resultSet.getInt("order_id"));
+                order.setId(resultSet.getInt("product_id"));
+                order.setUserID(resultSet.getInt("user_id"));
+                order.setOrderDate(resultSet.getString("order_date"));
+                order.setQuantity(resultSet.getInt("order_quantity"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return order;
     }
 }
