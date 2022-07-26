@@ -33,7 +33,7 @@ public class OrderDao {
     public OrderDao(Connection connection) {
         super();
         this.connection = connection;
-        system.out.println("connnected");
+        //sc testing
     }
 
     public boolean insertOrder(Order order) throws SQLException {
