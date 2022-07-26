@@ -92,8 +92,7 @@
                 <td><%=u.getState()%></td>
                 <td><%=u.getCountry()%></td>
                 <td><%=u.getPhonenumber()%></td>
-                <td><a href="editU-form?id=<%=u.getId()%>">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete-user?id=<%=u.getId()%>">Delete</a></td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<td> <a href="delete-user?id=<%=u.getId()%>">Delete</a></td>
             </tr>
             </tbody>
             <%}
