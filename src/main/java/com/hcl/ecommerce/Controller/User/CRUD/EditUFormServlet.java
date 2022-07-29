@@ -15,6 +15,7 @@ import java.util.Objects;
 public class EditUFormServlet extends HttpServlet {
     private UserDao userDao;
     private User user;
+    User existingUser;
     public EditUFormServlet(UserDao uDao, User user) {
         userDao = uDao;
         this.user = user;
@@ -33,14 +34,14 @@ public class EditUFormServlet extends HttpServlet {
                         System.out.println("yo??");
                         userDao = new UserDao(DbCon.getConnection());
                         int id = Integer.parseInt(request.getParameter("id"));
-                        User existingUser = userDao.selectUser(id);
+                        existingUser = userDao.selectUser(id);
                         RequestDispatcher dispatcher = request.getRequestDispatcher("UpdateUserForm.jsp"); //created later
                         request.setAttribute("user", existingUser);
                         dispatcher.forward(request, response);
                     } else {
                         userDao = new UserDao(DbCon.getConnection());
                         int id = Integer.parseInt(request.getParameter("id"));
-                        User existingUser = userDao.selectUser(id);
+                        existingUser = userDao.selectUser(id);
                         System.out.println("yo????");
                         RequestDispatcher dispatcher = request.getRequestDispatcher("ClientUpdateForm.jsp"); //created later
                         request.setAttribute("user", existingUser);

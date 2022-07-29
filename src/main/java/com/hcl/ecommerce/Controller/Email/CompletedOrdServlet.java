@@ -22,7 +22,7 @@ public class CompletedOrdServlet extends HttpServlet {
         String message = "Your order details are:  ";
         String toAddress = "julian.gaston@hcl.com"; //get email recipient
 
-
+        // comment to commit
         try {
             SendEmail.sendEmail(toAddress, message, header);
             System.out.println("before auth");

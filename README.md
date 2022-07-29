@@ -1,33 +1,12 @@
-# List Of Implementations
-- Complete Product and User CRUD
-- Add Cart
-- Session handling 
-- User Logout, Login
-- User Signup 
-- Displayable DB Values for Users and Products, for Admins and Users
-- Clean Project Structure
-- BootStrap 5
-- Invalid Login
-- Admin and Client Differentiation 
-- Remove from Cart and quantity funtionality 
-- Calculated Sales Tax and shipping w/ subtotal and total 
-- Mail sends on signup
-- Order checkout for guest and User functionailty 
-- Order List for Admin
-- Implemeted buy now as User or Guest 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
 
 
-# Ideas
-- NavBar Search on Home Page w/ Categories 
-- Create searchbar for User Lookup
-- Add Coupons w/ Controller, and Updated DAO
 
-# Currently Working On:
-- Implementing Navbar
-- Test Cases using JUnit 5
-- Add Log4j
-- Add modal for buy now button for guest checkout or user checkout if not already logged in (reminder)
-- Email Order information w/ total (close to done)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=coverage)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
 
-# Priorities After Current Is done 
-- Ideas ^^
+- Playing Around with Checkout. Expect Functional Issues...
