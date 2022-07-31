@@ -12,14 +12,14 @@ import java.sql.SQLException;
 
 @WebServlet(name = "InsertProductServlet", value = "/insert-product")
 public class InsertProductServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NumberFormatException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         String category = request.getParameter("category");
-        double price = Double.parseDouble(request.getParameter("price")); //check back on this
         String image = request.getParameter("image");
         ProductDao productDao = null;
-        Product product = new Product(name, category , price, image);
         try {
+            double price = Double.parseDouble(request.getParameter("price")); //check back on this
+            Product product = new Product(name, category , price, image);
             productDao = new ProductDao(DbCon.getConnection());
             productDao.insertProduct(product);
         } catch (ClassNotFoundException | SQLException e) {
