@@ -16,14 +16,6 @@ public class EditUFormServlet extends HttpServlet {
     private UserDao userDao;
     private User user;
     User existingUser;
-    public EditUFormServlet(UserDao uDao, User user) {
-        userDao = uDao;
-        this.user = user;
-    }
-    public EditUFormServlet() {
-        user = new User();
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {

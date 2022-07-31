@@ -54,7 +54,7 @@ class EditUFormServletTest extends TestCase {
         when(user.getUsertype()).thenReturn("Admin");
         when(request.getRequestDispatcher("UpdateUserForm.jsp")).thenReturn(dispatcher);
 
-        editUFormServlet = new EditUFormServlet(userDao, user);
+        editUFormServlet = new EditUFormServlet();
         editUFormServlet.doGet(request, response);
 
         verify(request, atLeast(1)).getParameter("id");
@@ -69,7 +69,7 @@ class EditUFormServletTest extends TestCase {
         when(user.getUsertype()).thenReturn("Client");
         when(request.getRequestDispatcher("ClientUpdateForm.jsp")).thenReturn(dispatcher);
 
-        editUFormServlet = new EditUFormServlet(userDao, user);
+        editUFormServlet = new EditUFormServlet();
         editUFormServlet.doGet(request, response);
 
         verify(request, atLeast(1)).getParameter("id");
