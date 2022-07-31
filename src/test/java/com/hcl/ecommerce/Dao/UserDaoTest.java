@@ -46,6 +46,7 @@ class UserDaoTest extends TestCase {
         Assertions.assertEquals(2, user.getId());
 
     }
+
     //Get all users test
     @Test
     void getAllUsers() {
