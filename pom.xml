@@ -45,6 +45,12 @@
             <version>8.0.29</version>
             <scope>runtime</scope>
         </dependency>
+             
+      <dependency>
+         <groupId>com.microsoft.azure</groupId>
+         <artifactId>applicationinsights-web-auto</artifactId> <!-- this supports servlet http request data -->
+         <version>2.6.4</version>
+      </dependency>
 
 
         <dependency>
