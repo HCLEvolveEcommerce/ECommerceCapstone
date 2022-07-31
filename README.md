@@ -9,4 +9,6 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=HCLEvolveEcommerce_ECommerceCapstone&metric=coverage)](https://sonarcloud.io/summary/new_code?id=HCLEvolveEcommerce_ECommerceCapstone)
 
+[![Build and deploy WAR app to Azure Web App - app-ECommerceCapstone-220717180554](https://github.com/HCLEvolveEcommerce/ECommerceCapstone/actions/workflows/master_app-ecommercecapstone-220717180554.yml/badge.svg)](https://github.com/HCLEvolveEcommerce/ECommerceCapstone/actions/workflows/master_app-ecommercecapstone-220717180554.yml)
+
 - Playing Around with Checkout. Expect Functional Issues...
