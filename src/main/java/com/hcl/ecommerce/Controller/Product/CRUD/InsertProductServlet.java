@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "InsertProductServlet", value = "/insert-product")
 public class InsertProductServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NumberFormatException {
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         double price = Double.parseDouble(request.getParameter("price")); //check back on this
