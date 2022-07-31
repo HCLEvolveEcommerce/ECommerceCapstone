@@ -18,7 +18,6 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
-        System.out.println(session.getId());
         response.setContentType("text/html;charset=UTF-8");
         try {
             String email = request.getParameter("login-email");
