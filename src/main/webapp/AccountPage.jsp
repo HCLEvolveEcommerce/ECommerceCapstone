@@ -158,8 +158,8 @@
           <p class="mb-0 text-muted">Payment</p>
           <p class="m-0">
             <span class="text-success"> Visa  **** 4216   </span> <br> 
-            Shipping fee:  $56 <br> 
-            Total Paid:
+<%--            Shipping fee:  $56 <br> --%>
+<%--            Total Paid:--%>
           </p>
         </div> <!-- col.// -->
       </div> <!-- row.// -->

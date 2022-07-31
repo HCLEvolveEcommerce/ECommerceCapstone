@@ -1,4 +1,3 @@
-package com.hcl.ecommerce.Controller.User.CRUD;
 
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.User;
@@ -8,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

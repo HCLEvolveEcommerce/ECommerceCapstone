@@ -129,23 +129,23 @@
       </div>
 
       <div class="row py-5 p-4 bg-white rounded shadow-sm">
-        <div class="col-lg-6">
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
-          <div class="p-4">
-            <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
-            <div class="input-group mb-4 border rounded-pill p-2">
-              <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
-              <div class="input-group-append border-0">
-                <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
-              </div>
-            </div>
-          </div>
-          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
-          <div class="p-4">
-            <p class="font-italic mb-4">If you have some information for the seller you can leave them in the box below</p>
-            <textarea name="" cols="30" rows="2" class="form-control"></textarea>
-          </div>
-        </div>
+<%--        <div class="col-lg-6">--%>
+<%--          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>--%>
+<%--          <div class="p-4">--%>
+<%--            <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>--%>
+<%--            <div class="input-group mb-4 border rounded-pill p-2">--%>
+<%--              <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">--%>
+<%--              <div class="input-group-append border-0">--%>
+<%--                <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>--%>
+<%--          <div class="p-4">--%>
+<%--            <p class="font-italic mb-4">If you have some information for the seller you can leave them in the box below</p>--%>
+<%--            <textarea name="" cols="30" rows="2" class="form-control"></textarea>--%>
+<%--          </div>--%>
+<%--        </div>--%>
         <div class="col-lg-6">
           <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
           <div class="p-4">
@@ -162,19 +162,7 @@
                 </ul><a href="CheckoutLogin.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Login</a>
               <%} else{%>
 
-            </ul><a href="order-all"  class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a>
-            <a href="stripe-servlet"  class="btn btn-dark rounded-pill py-2 btn-block">
-              <script
-                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="pk_test_51LMRusIS6vfGou9X2GkjPqT9ak1tsezEmOhJTfuxzPAHRIzsjkgWSk8ABVqoLqJ8mSrkZHxUoJSg60pijFIQZA0C00ylImPm5F"
-                    data-amount=${(total)};
-                    data-name="Evolve Ecommerce"
-                    data-description="Checkout"
-                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                    data-locale="auto"
-                    data-currency="usd">
-            </script> </a>
-                  <%}%>
+            </ul><a href="order-all"  class="btn btn-dark rounded-pill py-2 btn-block">Checkout</a><%}%>
           </div>
         </div>
       </div>

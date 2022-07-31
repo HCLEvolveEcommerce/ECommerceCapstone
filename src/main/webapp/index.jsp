@@ -37,7 +37,7 @@
         <article class="my-5 padding-y-lg text-center">
             <h1 class="display-4 text-black"> Luxury Products<br> At Your Fingertips  </h1>
             <p class="lead text-black">Trendy Products, Quality Material, Excellent Service</p>
-            <a href="#" class="btn btn-outline-dark"> Learn more </a>
+<%--            <a href="#" class="btn btn-outline-dark"> Learn more </a>--%>
         </article>
 
     </div> <!-- container end.// -->
@@ -89,7 +89,7 @@
                     </div>
                     <figcaption class="info">
                         <h6 class="title">Worldwide shipping</h6>
-                        <p>LWe ship to every nation, every state, and every territory at one flat rate price!  </p>
+                        <p>We ship to every nation, every state, and every territory at one flat rate price!  </p>
                     </figcaption>
                 </figure> <!-- itemside // -->
             </div> <!-- col // -->
@@ -164,7 +164,7 @@
 
                         <a href="add-cart?id=<%=p.getId()%>" class="btn btn-outline-primary">Add to cart</a>
                         <a href="user-order?quantity=1&id=<%=p.getId()%>" class="btn btn-success">Buy Now</a>
-                        <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
+<%--                        <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>--%>
                     </figcaption>
                 </figure>
             </div>
