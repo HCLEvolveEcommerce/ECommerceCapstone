@@ -27,11 +27,9 @@ public class EditUFormServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            System.out.println("yo?");
             if (user != null) {
                 request.getSession().setAttribute("auth", user);
                     if (Objects.equals(user.getUsertype(), "Admin")) {
-                        System.out.println("yo??");
                         userDao = new UserDao(DbCon.getConnection());
                         int id = Integer.parseInt(request.getParameter("id"));
                         existingUser = userDao.selectUser(id);
@@ -42,7 +40,6 @@ public class EditUFormServlet extends HttpServlet {
                         userDao = new UserDao(DbCon.getConnection());
                         int id = Integer.parseInt(request.getParameter("id"));
                         existingUser = userDao.selectUser(id);
-                        System.out.println("yo????");
                         RequestDispatcher dispatcher = request.getRequestDispatcher("ClientUpdateForm.jsp"); //created later
                         request.setAttribute("user", existingUser);
                         dispatcher.forward(request, response);
