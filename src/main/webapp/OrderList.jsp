@@ -51,14 +51,14 @@
         <br>
 
         <!--Search User -->
-        <nav class="navbar bg-light text-center">
-            <form action="select-user" class="container-fluid" method="get">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" name="id" class="form-control" placeholder="email or id" value="search" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-            </form>
-        </nav>
+<%--        <nav class="navbar bg-light text-center">--%>
+<%--            <form action="select-user" class="container-fluid" method="get">--%>
+<%--                <div class="input-group">--%>
+<%--                    <span class="input-group-text" id="basic-addon1">@</span>--%>
+<%--                    <input type="text" name="id" class="form-control" placeholder="email or id" value="search" aria-label="Username" aria-describedby="basic-addon1">--%>
+<%--                </div>--%>
+<%--            </form>--%>
+<%--        </nav>--%>
 
         <table class="table table-bordered" id="table" style="border-width: thick ">
             <thead style="border-width: thick;">

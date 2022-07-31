@@ -1,4 +1,3 @@
-package com.hcl.ecommerce.Controller.User.CRUD;
 
 import com.hcl.ecommerce.Dao.UserDao;
 import com.hcl.ecommerce.Model.User;

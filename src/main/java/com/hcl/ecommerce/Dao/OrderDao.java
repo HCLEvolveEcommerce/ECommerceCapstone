@@ -33,6 +33,7 @@ public class OrderDao {
     public OrderDao(Connection connection) {
         super();
         this.connection = connection;
+        System.out.println("Connected");
     }
 
     public boolean insertOrder(Order order) throws SQLException {
@@ -123,6 +124,7 @@ public class OrderDao {
         return book;
     }
 
+
     public Order getOrderByOrderDate(String orderDate) {
         Order order = new Order();
         try {
@@ -148,3 +150,4 @@ public class OrderDao {
         return order;
     }
 }
+
