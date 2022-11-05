@@ -13,13 +13,15 @@
 
 - Playing Around with Checkout. Expect Functional Issues...
 
-#Tech Stack:#
+Tech Stack:
   - JSP
   - Servlet
   - Bootstrap
   - MVC Design Pattern 
   - Azure 
   - Sonarcloud 
+  - Jira (Agile)
   - JUnit && Mockito 
   - MySQL 
+  - GitHub Actions for CI/CD 
   
