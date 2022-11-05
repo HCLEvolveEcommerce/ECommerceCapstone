@@ -22,6 +22,7 @@ Tech Stack:
   - Sonarcloud 
   - Jira (Agile)
   - JUnit && Mockito 
+  - JaCoCo
   - MySQL 
   - GitHub Actions for CI/CD 
   
