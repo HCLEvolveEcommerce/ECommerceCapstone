@@ -12,3 +12,14 @@
 [![Build and deploy WAR app to Azure Web App - app-ECommerceCapstone-220717180554](https://github.com/HCLEvolveEcommerce/ECommerceCapstone/actions/workflows/master_app-ecommercecapstone-220717180554.yml/badge.svg)](https://github.com/HCLEvolveEcommerce/ECommerceCapstone/actions/workflows/master_app-ecommercecapstone-220717180554.yml)
 
 - Playing Around with Checkout. Expect Functional Issues...
+
+##Tech Stack:
+  - JSP
+  - Servlet
+  - Bootstrap
+  - MVC Design Pattern 
+  - Azure 
+  - Sonarcloud 
+  - JUnit && Mockito 
+  - MySQL 
+  
