@@ -13,7 +13,7 @@
 
 - Playing Around with Checkout. Expect Functional Issues...
 
-##Tech Stack:
+#Tech Stack:#
   - JSP
   - Servlet
   - Bootstrap
