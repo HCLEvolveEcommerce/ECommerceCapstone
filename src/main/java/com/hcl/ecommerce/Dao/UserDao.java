@@ -152,7 +152,8 @@ public class UserDao {
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
 
-        } catch (SQLException ignored) {
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

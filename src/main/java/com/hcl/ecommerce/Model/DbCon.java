@@ -7,10 +7,11 @@ import java.sql.SQLException;
 public class DbCon {
 
     private static Connection connection = null;
-    private static String jdbcURL = "jdbc:mysql://userdbazure.mysql.database.azure.com:3306/userdb";
-    private static String jdbcUserName = "dsikes313";
+//    private static String jdbcURL = "jdbc:mysql://userdbazure.mysql.database.azure.com:3306/userdb";
+private static String jdbcURL ="jdbc:postgresql:userdb";
+    private static String jdbcUserName = "postgres";
     private static String jdbcPassword = "Fbies#13188";
-    private static String jdbcDriver = "com.mysql.cj.jdbc.Driver";
+    private static String jdbcDriver = "org.postgresql.Driver";
 
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
